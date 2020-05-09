@@ -1,0 +1,363 @@
+school,fname,lat,long
+UCLA,66,34.0689,118.4452
+Kentucky,59,38.0307,84.5040
+UNC,54,35.9049,79.0469
+Kansas,48,38.9543,95.2558
+Arizona,38,32.2319,110.9501
+Duke,38,36.0014,78.9382
+Syracuse,38,43.0481,76.1474
+Notre Dame,36,41.7056,86.2353
+Louisville,35,38.2123,85.7585
+Michigan State,34,42.7018,84.4822
+Michigan,31,42.2780,83.7382
+Georgia Tech,30,33.7756,84.3963
+Indiana,30,39.1754,86.5126
+Maryland,30,38.9869,76.9426
+Florida State,29,30.4419,84.2985
+Georgetown,29,38.9076,77.0723
+UNLV,29,36.1085,115.1432
+LSU,27,30.4133,91.1800
+NC State,27,35.7847,78.6821
+Villanova,26,40.0379,75.3433
+Minnesota,25,44.9740,93.2277
+Iowa,24,41.6627,91.5549
+Alabama,23,33.2140,87.5391
+Arkansas,23,36.0687,94.1748
+St. John's,23,40.7221,73.7942
+Houston,22,29.7199,95.3422
+Marquette,22,43.0388,87.9286
+Memphis,22,35.1187,89.9375
+Purdue,22,40.4237,86.9212
+UConn,22,41.8077,72.2540
+Illinois,21,40.1020,88.2272
+Ohio State,21,40.0068,83.0306
+Oklahoma State,21,36.1270,97.0737
+California,20,37.8719,122.2585
+Providence,20,41.8268,71.4025
+USC,20,34.0224,118.2851
+Cincinnati,19,39.1329,84.5150
+Missouri,19,38.9404,92.3277
+Washington,19,38.6488,90.3180
+BYU,18,40.2518,111.6493
+DePaul,18,41.9248,87.6566
+Temple,18,39.9800,75.1600
+Virginia,18,38.0336,78.5080
+Arizona State,17,33.4256,111.9280
+Clemson,17,34.6738,82.8369
+Florida,17,29.6436,82.3549
+Iowa State,17,42.0266,93.6465
+Oregon,17,44.0448,123.0726
+South Carolina,17,33.9938,81.0299
+Tennessee,17,35.9544,83.9295
+Texas,17,30.2849,97.7341
+Wake Forest,17,36.1355,80.2792
+Auburn,16,32.5934,85.4952
+Georgia,16,33.9480,83.3773
+Oklahoma,16,35.2059,97.4457
+Pepperdine,16,34.0414,118.7096
+Pitt,16,40.4444,79.9608
+Stanford,16,37.4275,122.1697
+Wisconsin,16,43.0766,89.4125
+Boston College,15,42.3355,71.1685
+Fresno State,15,36.8134,119.7461
+Utah,15,40.7649,111.8421
+Oregon State,14,44.5638,123.2794
+Xavier,14,39.1494,84.4736
+San Francisco,13,37.7766,122.4507
+Tennessee State,13,36.1668,86.8276
+Texas-El Paso,13,31.7709,106.5046
+La Salle,12,40.0386,75.1566
+New Mexico State,12,32.2788,106.7479
+Seton Hall,12,40.7434,74.2465
+Cal State Long Beach,11,33.7838,118.1141
+Gonzaga,11,47.6670,117.4014
+Kansas State,11,39.1974,96.5847
+Miami (FL),11,25.7179,80.2746
+Mississippi State,11,33.4552,88.7944
+Murray State,11,36.6164,88.3215
+University of Alabama at Birmingham,11,33.5020,86.8064
+Virginia Tech,11,37.2284,80.4234
+Baylor,10,31.5469,97.1211
+Cal State Fullerton,10,33.8829,117.8869
+Detroit Mercy,10,42.4142,83.1380
+Nebraska,10,40.8202,96.7005
+New Mexico,10,35.0843,106.6798
+Oral Roberts,10,36.0508,95.9537
+Stephen F. Austin,10,31.6206,94.6451
+Texas Tech,10,33.5843,101.8783
+Colorado,9,,
+Dayton,9,,
+Jackson State University,9,,
+Nevada,9,,
+Old Dominion,9,,
+Vanderbilt,9,,
+Wichita State,9,,
+Wyoming,9,,
+Eastern Michigan,8,,
+Jacksonville University,8,,
+Ole Miss,8,,
+Rutgers University,8,,
+TCU,8,,
+Bradley,7,,
+Duquesne,7,,
+George Washington,7,,
+Loyola Chicago,7,,
+San Diego State,7,,
+Southern Illinois,7,,
+Texas A & M,7,,
+Tulsa,7,,
+UMass,7,,
+Virginia Union University,7,,
+Washington State,7,,
+Central Michigan University,6,,
+Drake University,6,,
+Idaho State University,6,,
+LA-Lafayette,6,,
+Little Rock,6,,
+Louisiana Tech,6,,
+New Orleans,6,,
+Ohio University,6,,
+Rhode Island,6,,
+Rice University,6,,
+SMU,6,,
+Saint Joseph's,6,,
+San Jose State,6,,
+Santa Clara,6,,
+St. Bonaventure,6,,
+UC Santa Barbara,6,,
+UNC Charlotte,6,,
+"University of California, Irvine",6,,
+University of South Alabama,6,,
+Western Kentucky,6,,
+Albany State University,5,,
+Cleveland State University,5,,
+Colorado State,5,,
+Creighton,5,,
+Grambling State University,5,,
+Hawaii,5,,
+Northwestern,5,,
+Penn,5,,
+Penn State,5,,
+Saint Louis,5,,
+Seattle University,5,,
+South Florida,5,,
+Toledo,5,,
+Tulane,5,,
+University of Portland,5,,
+Virginia Commonwealth,5,,
+Weber State,5,,
+Austin Peay State University,4,,
+Boise State,4,,
+Chattanooga,4,,
+Idaho,4,,
+Illinois State,4,,
+Iona College,4,,
+Louisiana-Monroe,4,,
+McNeese State University,4,,
+Montana,4,,
+Morehead State University,4,,
+Southern University and A & M College,4,,
+University of Southern Mississippi,4,,
+West Virginia,4,,
+Western Michigan,4,,
+Alcorn State University,3,,
+Augsburg College,3,,
+Drexel,3,,
+East Carolina University,3,,
+Florida A & M,3,,
+Green Bay,3,,
+Hofstra,3,,
+Lamar University,3,,
+Lincoln University of Missouri,3,,
+Loyola Marymount University,3,,
+Northern Illinois,3,,
+Oklahoma Baptist University,3,,
+Portland State,3,,
+Princeton,3,,
+Richmond,3,,
+Saint Francis University,3,,
+Texas Southern,3,,
+Towson University,3,,
+University of Evansville,3,,
+University of the Pacific,3,,
+Utah State University,3,,
+American University,2,,
+Auburn University at Montgomery,2,,
+Augustana College (SD),2,,
+Ball State University,2,,
+Bethel College,2,,
+Bowling Green,2,,
+"California State University, Los Angeles",2,,
+Canisius,2,,
+Centenary (LA),2,,
+Central Connecticut State University,2,,
+Central State University,2,,
+Dartmouth College,2,,
+Davidson,2,,
+Delta State University,2,,
+Eastern Illinois University,2,,
+Eastern Kentucky University,2,,
+Eastern Washington,2,,
+Florida International University,2,,
+Gardner-Webb University,2,,
+George Mason,2,,
+Georgia Southern University,2,,
+Georgia State University,2,,
+Hampton,2,,
+Indiana State University,2,,
+Kent State University,2,,
+Kentucky State University,2,,
+Kentucky Wesleyan College,2,,
+Liberty,2,,
+Long Island University,2,,
+Miami University,2,,
+Middle Tennessee,2,,
+Mississippi Valley State University,2,,
+Missouri State University,2,,
+Morgan State University,2,,
+Niagara University,2,,
+Norfolk State,2,,
+Northeastern University,2,,
+Northern Arizona University,2,,
+Oakland,2,,
+Oklahoma City University,2,,
+Saint Mary's,2,,
+South Carolina State University,2,,
+South Dakota State,2,,
+St. Mary's University,2,,
+Stetson University,2,,
+Tennessee Technological University,2,,
+Texas State University,2,,
+UNC Wilmington,2,,
+University of Illinois at Chicago,2,,
+University of North Dakota,2,,
+University of Southern Colorado,2,,
+University of Texas-Pan American,2,,
+Valparaiso,2,,
+William Paterson University,2,,
+Winston-Salem State,2,,
+Wright State University,2,,
+Alabama A & M University,1,,
+Alabama State University,1,,
+American International College,1,,
+Augusta State University,1,,
+Aurora University,1,,
+Averett University,1,,
+Barton County Community College,1,,
+Belmont,1,,
+Blinn College,1,,
+Boston University,1,,
+Brigham Young University Hawaii,1,,
+Buffalo,1,,
+Buffalo State,1,,
+Butler,1,,
+Cal Poly Pomona,1,,
+Cal State San Bernardino,1,,
+Cal State-Bakersfield,1,,
+California University of Pennslyvania,1,,
+Campbell,1,,
+Christopher Newport University,1,,
+Colgate,1,,
+College of Charleston,1,,
+College of Saint Rose,1,,
+Columbia University,1,,
+Coppin State University,1,,
+Cornell,1,,
+Delaware State University,1,,
+Denver,1,,
+East Tennessee State University,1,,
+East Texas State University,1,,
+Elizabeth City State University,1,,
+Elon University,1,,
+Fairfield,1,,
+Fayetteville State University,1,,
+Fordham,1,,
+Grand Canyon University,1,,
+Guilford College,1,,
+Hardin-Simmons University,1,,
+Harvard University,1,,
+Holy Cross,1,,
+Howard University,1,,
+Illinois Wesleyan University,1,,
+Indian Hills Community College,1,,
+James Madison University,1,,
+Lebanon Valley College,1,,
+Lewis,1,,
+Lincoln Memorial University,1,,
+Longwood University,1,,
+Loyola College in Maryland,1,,
+Manhattan College,1,,
+Marist College,1,,
+Marshall,1,,
+Master's College,1,,
+Mercer University,1,,
+Meridian Community College,1,,
+Midland College,1,,
+Midwestern State University,1,,
+Missouri-Kansas City,1,,
+Molloy,1,,
+Monmouth University,1,,
+Morehouse College,1,,
+Mount San Antonio College,1,,
+NYU,1,,
+North Carolina A&T,1,,
+North Park University,1,,
+Northeast Mississippi Community College,1,,
+Northeastern State University,1,,
+Northwestern Oklahoma State University,1,,
+Northwestern State University,1,,
+Okaloosa-Walton Community College,1,,
+Pfeiffer University,1,,
+Phillips University,1,,
+Prairie View A & M University,1,,
+Robert Morris University (IL),1,,
+Saint Augustine's College,1,,
+Saint Peter's College,1,,
+Saint Vincent College,1,,
+Seward County Community College,1,,
+Siena College,1,,
+Slippery Rock University of Pennsylvania,1,,
+Southeastern Oklahoma State University,1,,
+St. Thomas University,1,,
+State University of New York at Potsdam,1,,
+Stony Brook University,1,,
+Texas-San Antonio,1,,
+Trenton State University,1,,
+Trinity Valley CC,1,,
+Tuskegee University,1,,
+USC Upstate,1,,
+United States Naval Academy,1,,
+University of Baltimore,1,,
+University of Bridgeport,1,,
+University of Central Arkansas,1,,
+University of Central Oklahoma,1,,
+University of Hartford,1,,
+University of Indianapolis,1,,
+University of Maine,1,,
+University of Minnesota Duluth,1,,
+University of Montevallo,1,,
+University of Nebraska at Kearney,1,,
+University of North Texas,1,,
+University of Northern Colorado,1,,
+University of Tampa,1,,
+University of Tennessee at Martin,1,,
+University of West Florida,1,,
+University of Wisconsin-Parkside,1,,
+University of Wisconsin-Stevens Point,1,,
+University of the District of Columbia,1,,
+Utah Valley State College,1,,
+Virginia Military Institute,1,,
+Walsh University,1,,
+West Georgia,1,,
+West Texas A & M University,1,,
+West Virginia State University,1,,
+West Virginia Tech,1,,
+West Virginia Wesleyan College,1,,
+Westchester CC,1,,
+Western Carolina University,1,,
+Wheaton College,1,,
+Wheeling Jesuit,1,,
+William & Mary,1,,
+Wingate University,1,,
+Xavier University of Louisiana,1,,
+Yale,1,,
