@@ -2,14 +2,14 @@ function openNav() {
     document.getElementById("mySidebar").style.display = "block";
     document.getElementById("myOverlay").style.display = "block";
     document.getElementById("topBar").style.display = "none";
-  }
-  
+  }  
   function closeNav() {
     document.getElementById("mySidebar").style.display = "none";
     document.getElementById("myOverlay").style.display = "none";
     document.getElementById("topBar").style.display = "block";
-  }
-  
+  }  
+
+window.addEventListener("load", () => {
   var height = [];
   fetch("/height")
     .then(res => res.json())
@@ -23,8 +23,7 @@ function openNav() {
             height.push( { label: label[i], y: y[i]});
           }
         })
-    });
-  
+    });  
   var ws = [];
   fetch("/ws")
     .then(res => res.json())
@@ -39,7 +38,6 @@ function openNav() {
           }
         })
     });
-
     var ppg = [];
     fetch("/ppg")
       .then(res => res.json())
@@ -54,77 +52,73 @@ function openNav() {
             }
           })
       });
-      var gp = [];
-      fetch("/gp")
+    var gp = [];
+    fetch("/gp")
+      .then(res => res.json())
+      .then(res => res.data.map(c => c.label))
+      .then(label => {
+        fetch("/gp")
         .then(res => res.json())
-        .then(res => res.data.map(c => c.label))
-        .then(label => {
-          fetch("/gp")
-          .then(res => res.json())
-          .then(res => res.data.map(c => c.y))
-          .then(y => {
-            for(let i = 0; i < y.length; i+=1) {            
-                gp.push( { label: label[i], y: y[i]});
-              }
-            })
-        });
-      var ppgi = [];
-      fetch("/ppgi")
+        .then(res => res.data.map(c => c.y))
+        .then(y => {
+          for(let i = 0; i < y.length; i+=1) {            
+              gp.push( { label: label[i], y: y[i]});
+            }
+          })
+      });
+    var ppgi = [];
+    fetch("/ppgi")
+      .then(res => res.json())
+      .then(res => res.data.map(c => c.label))
+      .then(label => {
+        fetch("/ppgi")
         .then(res => res.json())
-        .then(res => res.data.map(c => c.label))
-        .then(label => {
-          fetch("/ppgi")
-          .then(res => res.json())
-          .then(res => res.data.map(c => c.y))
-          .then(y => {
-            for(let i = 0; i < y.length; i+=1) {            
-                ppgi.push( { label: label[i], y: y[i]});
-              }
-            })
-        });  
-      var rbs = [];
+        .then(res => res.data.map(c => c.y))
+        .then(y => {
+          for(let i = 0; i < y.length; i+=1) {            
+              ppgi.push( { label: label[i], y: y[i]});
+            }
+          })
+      });  
+    var rbs = [];
+    fetch("/rbs")
+    .then(res => res.json())
+    .then(res => res.data.map(c => c.label))
+    .then(label => {
       fetch("/rbs")
       .then(res => res.json())
-      .then(res => res.data.map(c => c.label))
-      .then(label => {
-        fetch("/rbs")
-        .then(res => res.json())
-        .then(res => res.data.map(c => c.y))
-        .then(y => {
-          for(let i = 0; i < y.length; i+=1) {            
-              rbs.push( { label: label[i], y: y[i]});
-            }
-          })
-      });  
-
-      var ast = [];
+      .then(res => res.data.map(c => c.y))
+      .then(y => {
+        for(let i = 0; i < y.length; i+=1) {            
+            rbs.push( { label: label[i], y: y[i]});
+          }
+        })
+    });  
+    var ast = [];
+    fetch("/ast")
+    .then(res => res.json())
+    .then(res => res.data.map(c => c.label))
+    .then(label => {
       fetch("/ast")
       .then(res => res.json())
-      .then(res => res.data.map(c => c.label))
-      .then(label => {
-        fetch("/ast")
-        .then(res => res.json())
-        .then(res => res.data.map(c => c.y))
-        .then(y => {
-          for(let i = 0; i < y.length; i+=1) {            
-              ast.push( { label: label[i], y: y[i]});
-            }
-          })
-      });  
-
-  window.addEventListener("load", () => {
+      .then(res => res.data.map(c => c.y))
+      .then(y => {
+        for(let i = 0; i < y.length; i+=1) {            
+            ast.push( { label: label[i], y: y[i]});
+          }
+        })
+    });  
     const cont1 = document.querySelector("#chart1");
     const cont2 = document.querySelector("#chart2");
     const cont3 = document.querySelector("#chart3");
     const cont4 = document.querySelector("#chart4");
     const checkbox = document.querySelector("#dark");
-
+    
     if (sessionStorage.getItem("mode") == "dark") {
       darkmode();
     } else {
       nodark();
     }
-  
     checkbox.addEventListener("change", function() {
       if (checkbox.checked) {
         darkmode();
@@ -132,15 +126,13 @@ function openNav() {
         nodark();
       }
     });
-  
     function darkmode() {
       document.body.classList.add("dark-mode");
       checkbox.checked = true;
       sessionStorage.setItem("mode", "dark");
       if (cont1) {
         CanvasJS.addColorSet("greenShades",
-        [//colorSet Array
-        
+        [//colorSet Array        
         "#008080",              
         ]);
         var chart1 = new CanvasJS.Chart(cont1, {
@@ -236,8 +228,7 @@ function openNav() {
                 markerSize: 0,
                 dataPoints: rbs
             },
-        ]
-            
+        ]            
         });        
       }
       if (cont3) {
@@ -285,8 +276,7 @@ function openNav() {
                 showInLegend: true,
                 markerSize: 0,
                 dataPoints: ppg
-            }]
-            
+            }]            
         })
         
         function toogleDataSeries(e){
@@ -294,14 +284,12 @@ function openNav() {
                 e.dataSeries.visible = false;
             } else{
                 e.dataSeries.visible = true;
-            }
-            
+            }            
         }
       }
       if (cont4) {
         CanvasJS.addColorSet("greenShades",
-        [//colorSet Array
-        
+        [//colorSet Array        
         "#008080",              
         ]);
         var chart4 = new CanvasJS.Chart(cont4, {
@@ -344,8 +332,7 @@ function openNav() {
       chart2.render();
       chart3.render();
       chart4.render()
-    }
-  
+    }  
     function nodark() {
       document.body.classList.remove("dark-mode");
       checkbox.checked = false;
@@ -449,11 +436,8 @@ function openNav() {
                 markerSize: 0,
                 dataPoints: rbs
             },
-        ]
-            
-        });
-        
-        
+        ]            
+        });     
       }
       if (cont3) {
         var chart3 = new CanvasJS.Chart(cont3, {
@@ -462,8 +446,7 @@ function openNav() {
                 text: "League Averages by Debut Year"
             },
             axisX: {
-                valueFormatString: "YYYY",
-                
+                valueFormatString: "YYYY",                
             },
             axisY2: {
                 title: "",
@@ -496,24 +479,19 @@ function openNav() {
                 showInLegend: true,
                 markerSize: 0,
                 dataPoints: ppg
-            }]
-            
-        })
-        
+            }]            
+        })        
         function toogleDataSeries(e){
             if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
                 e.dataSeries.visible = false;
             } else{
                 e.dataSeries.visible = true;
-            }
-            
+            }            
         }
       }
-      if (cont4) {
-        
+      if (cont4) {        
         CanvasJS.addColorSet("greenShades",
-        [//colorSet Array
-        
+        [//colorSet Array        
         "#008080",              
         ]);
         var chart4 = new CanvasJS.Chart(cont4, {

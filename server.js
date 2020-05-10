@@ -47,12 +47,10 @@ app.get('/height', (req, res) => {
   const baseURL = 'http://localhost:' + port + '/json/height.json';
   fetch(baseURL)
     .then(res => res.json())
-    .then(data => {
-      console.log(data);
+    .then(data => {      
       res.send({ data: data });
         })
-      .catch((err) => {
-      console.log(err);
+      .catch((err) => {      
       res.redirect('/error');
         })
 });
@@ -61,12 +59,10 @@ app.get('/ws', (req, res) => {
     const baseURL = 'http://localhost:' + port + '/json/ws.json';
     fetch(baseURL)
       .then(res => res.json())
-      .then(data => {
-        console.log(data);
+      .then(data => {        
         res.send({ data: data });
           })
-        .catch((err) => {
-        console.log(err);
+        .catch((err) => {        
         res.redirect('/error');
           })
   });
@@ -75,12 +71,10 @@ app.get('/ws', (req, res) => {
     const baseURL = 'http://localhost:' + port + '/json/ppg.json';
     fetch(baseURL)
       .then(res => res.json())
-      .then(data => {
-        console.log(data);
+      .then(data => {        
         res.send({ data: data });
           })
-        .catch((err) => {
-        console.log(err);
+        .catch((err) => {        
         res.redirect('/error');
           })
   });
@@ -89,12 +83,10 @@ app.get('/ws', (req, res) => {
     const baseURL = 'http://localhost:' + port + '/json/gp.json';
     fetch(baseURL)
       .then(res => res.json())
-      .then(data => {
-        console.log(data);
+      .then(data => {        
         res.send({ data: data });
           })
-        .catch((err) => {
-        console.log(err);
+        .catch((err) => {        
         res.redirect('/error');
           })
   });
@@ -103,12 +95,10 @@ app.get('/ws', (req, res) => {
     const baseURL = 'http://localhost:' + port + '/json/ppg_ind.json';
     fetch(baseURL)
       .then(res => res.json())
-      .then(data => {
-        console.log(data);
+      .then(data => {        
         res.send({ data: data });
           })
-        .catch((err) => {
-        console.log(err);
+        .catch((err) => {        
         res.redirect('/error');
           })
   });
@@ -117,12 +107,10 @@ app.get('/ws', (req, res) => {
     const baseURL = 'http://localhost:' + port + '/json/rbs.json';
     fetch(baseURL)
       .then(res => res.json())
-      .then(data => {
-        console.log(data);
+      .then(data => {        
         res.send({ data: data });
           })
-        .catch((err) => {
-        console.log(err);
+        .catch((err) => {        
         res.redirect('/error');
           })
   });
@@ -131,12 +119,10 @@ app.get('/ws', (req, res) => {
     const baseURL = 'http://localhost:' + port + '/json/ast.json';
     fetch(baseURL)
       .then(res => res.json())
-      .then(data => {
-        console.log(data);
+      .then(data => {        
         res.send({ data: data });
           })
-        .catch((err) => {
-        console.log(err);
+        .catch((err) => {        
         res.redirect('/error');
           })
   });
