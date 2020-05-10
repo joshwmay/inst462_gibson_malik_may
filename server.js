@@ -84,4 +84,60 @@ app.get('/ws', (req, res) => {
         res.redirect('/error');
           })
   });
+
+  app.get('/gp', (req, res) => {
+    const baseURL = 'http://localhost:' + port + '/json/gp.json';
+    fetch(baseURL)
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        res.send({ data: data });
+          })
+        .catch((err) => {
+        console.log(err);
+        res.redirect('/error');
+          })
+  });
+
+  app.get('/ppgi', (req, res) => {
+    const baseURL = 'http://localhost:' + port + '/json/ppg_ind.json';
+    fetch(baseURL)
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        res.send({ data: data });
+          })
+        .catch((err) => {
+        console.log(err);
+        res.redirect('/error');
+          })
+  });
+
+  app.get('/rbs', (req, res) => {
+    const baseURL = 'http://localhost:' + port + '/json/rbs.json';
+    fetch(baseURL)
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        res.send({ data: data });
+          })
+        .catch((err) => {
+        console.log(err);
+        res.redirect('/error');
+          })
+  });
+
+  app.get('/ast', (req, res) => {
+    const baseURL = 'http://localhost:' + port + '/json/ast.json';
+    fetch(baseURL)
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        res.send({ data: data });
+          })
+        .catch((err) => {
+        console.log(err);
+        res.redirect('/error');
+          })
+  });
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
