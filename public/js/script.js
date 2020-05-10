@@ -10,14 +10,58 @@ function openNav() {
     document.getElementById("topBar").style.display = "block";
   }
   
+  var height = [];
+  fetch("/height")
+    .then(res => res.json())
+    .then(res => res.data.map(c => c.label))
+    .then(label => {
+      fetch("/height")
+      .then(res => res.json())
+      .then(res => res.data.map(c => c.y))
+      .then(y => {
+        for(let i = 0; i < y.length; i+=1) {            
+            height.push( { label: label[i], y: y[i]});
+          }
+        })
+    });
+  
+  var ws = [];
+  fetch("/ws")
+    .then(res => res.json())
+    .then(res => res.data.map(c => c.x))
+    .then(x => {
+      fetch("/ws")
+      .then(res => res.json())
+      .then(res => res.data.map(c => c.y))
+      .then(y => {
+        for(let i = 0; i < y.length; i+=1) {            
+            ws.push( { x: new Date(x[i],1,1), y: y[i]});
+          }
+        })
+    });
+
+    var ppg = [];
+    fetch("/ppg")
+      .then(res => res.json())
+      .then(res => res.data.map(c => c.x))
+      .then(x => {
+        fetch("/ppg")
+        .then(res => res.json())
+        .then(res => res.data.map(c => c.y))
+        .then(y => {
+          for(let i = 0; i < y.length; i+=1) {            
+              ppg.push( { x: new Date(x[i],1,1), y: y[i]});
+            }
+          })
+      });
+
   window.addEventListener("load", () => {
     const cont1 = document.querySelector("#chart1");
     const cont2 = document.querySelector("#chart2");
     const cont3 = document.querySelector("#chart3");
+    const cont4 = document.querySelector("#chart4");
     const checkbox = document.querySelector("#dark");
-    //console.log(sessionStorage.getItem("actors"));
-  
-  
+
     if (sessionStorage.getItem("mode") == "dark") {
       darkmode();
     } else {
@@ -39,11 +83,8 @@ function openNav() {
       if (cont1) {
         CanvasJS.addColorSet("greenShades",
         [//colorSet Array
-        "#2F4F4F",
-        "#008080",
-        "#2E8B57",
-        "#3CB371",
-        "#90EE90"                
+        
+        "#008080",              
         ]);
         var chart1 = new CanvasJS.Chart(cont1, {
         backgroundColor: null,
@@ -56,12 +97,16 @@ function openNav() {
         axisX: {
           labelFontColor: "none",
           title: "",
+          gridThickness: 0,
+          tickLength: 1,
           labelAngle: -20,
           interval: 1,
         },
         axisY: {
           labelFontColor: "white",
           title: "Number of Games",
+          gridThickness: 0,
+          tickLength: 1,
           interval: 200,
           labelWrap: true,
           labelFontColor: "white"
@@ -139,10 +184,14 @@ function openNav() {
             axisX: {
                 labelFontColor: "",
                 interval: 1,
+                gridThickness: 0,
+                tickLength: 0,
               },
             axisY: {
                 title: "Avg Per Game",
-                maximum: 35
+                maximum: 35,
+                gridThickness: 0,
+                tickLength: 1,
             },
             legend: {
                 verticalAlign: "top",
@@ -350,11 +399,15 @@ function openNav() {
                 fontColor: "white"
             },
             axisX: {
-                valueFormatString: "YYYY"
+                valueFormatString: "YYYY",
+                gridThickness: 0,
+          tickLength: 0,
             },
             axisY2: {
                 title: "",
-                maximum: 100,
+                gridThickness: 0,
+                tickLength: 0,
+                maximum: 50,
                 labelFontColor: "white"
             },
             toolTip: {
@@ -375,185 +428,14 @@ function openNav() {
                     name: "Wins Contributed",
                     showInLegend: true,
                     markerSize: 0,
-                    dataPoints: [		
-                        { x: new Date(1967,1,1),y:23.1},
-                        { x: new Date(1968,1,1),y:19.7},
-                        { x: new Date(1969,1,1),y:24.2},
-                        { x: new Date(1970,1,1),y:39.4},
-                        { x: new Date(1971,1,1),y:28.1},
-                        { x: new Date(1972,1,1),y:26.3},
-                        { x: new Date(1973,1,1),y:26.6},
-                        { x: new Date(1974,1,1),y:32.9},
-                        { x: new Date(1975,1,1),y:24.9},
-                        { x: new Date(1976,1,1),y:34.4},
-                        { x: new Date(1977,1,1),y:32.6},
-                        { x: new Date(1978,1,1),y:19.5},
-                        { x: new Date(1979,1,1),y:17.6},
-                        { x: new Date(1980,1,1),y:14.4},
-                        { x: new Date(1981,1,1),y:22.6},
-                        { x: new Date(1982,1,1),y:14.7},
-                        { x: new Date(1983,1,1),y:18.5},
-                        { x: new Date(1984,1,1),y:29.3},
-                        { x: new Date(1985,1,1),y:28.3},
-                        { x: new Date(1986,1,1),y:16.1},
-                        { x: new Date(1987,1,1),y:20.3},
-                        { x: new Date(1988,1,1),y:15.2},
-                        { x: new Date(1989,1,1),y:14.1},
-                        { x: new Date(1990,1,1),y:17.1},
-                        { x: new Date(1991,1,1),y:16.7},
-                        { x: new Date(1992,1,1),y:12.2},
-                        { x: new Date(1993,1,1),y:18.2},
-                        { x: new Date(1994,1,1),y:15},
-                        { x: new Date(1995,1,1),y:19.6},
-                        { x: new Date(1996,1,1),y:19.9},
-                        { x: new Date(1997,1,1),y:15.5},
-                        { x: new Date(1998,1,1),y:0},
-                        { x: new Date(1999,1,1),y:21.4},
-                        { x: new Date(2000,1,1),y:14.5},
-                        { x: new Date(2001,1,1),y:20.2},
-                        { x: new Date(2002,1,1),y:14},
-                        { x: new Date(2003,1,1),y:18.1},
-                        { x: new Date(2004,1,1),y:14.2},
-                        { x: new Date(2005,1,1),y:11.7},
-                        { x: new Date(2006,1,1),y:6.1},
-                        { x: new Date(2007,1,1),y:6.8},
-                        { x: new Date(2008,1,1),y:9.6},
-                        { x: new Date(2009,1,1),y:9.6},
-                        { x: new Date(2010,1,1),y:7.8},
-                        { x: new Date(2011,1,1),y:3.1},
-                        { x: new Date(2012,1,1),y:2.6},
-                        { x: new Date(2013,1,1),y:1.5},
-                        { x: new Date(2014,1,1),y:1.2},
-                        { x: new Date(2015,1,1),y:1},
-                        { x: new Date(2016,1,1),y:0.5},
-                        { x: new Date(2017,1,1),y:0.4},
-                        { x: new Date(2018,1,1),y:0},
-                        { x: new Date(2019,1,1),y:0}    
-                    ]
+                    dataPoints: ws
                 },{
                 type:"line",
-                axisYType: "secondary",
+                axisYType: "secondary",                
                 name: "Points Per Game",
                 showInLegend: true,
                 markerSize: 0,
-                dataPoints: [		
-                    { x: new Date(1967,1,1),y:11.6},
-                    { x: new Date(1968,1,1),y:8.5},
-                    { x: new Date(1969,1,1),y:9.6},
-                    { x: new Date(1970,1,1),y:12.2},
-                    { x: new Date(1971,1,1),y:9},
-                    { x: new Date(1972,1,1),y:9.7},
-                    { x: new Date(1973,1,1),y:11.1},
-                    { x: new Date(1974,1,1),y:10.1},
-                    { x: new Date(1975,1,1),y:9.2},
-                    { x: new Date(1976,1,1),y:9.9},
-                    { x: new Date(1977,1,1),y:9.7},
-                    { x: new Date(1978,1,1),y:8.5},
-                    { x: new Date(1979,1,1),y:7.3},
-                    { x: new Date(1980,1,1),y:6.6},
-                    { x: new Date(1981,1,1),y:7.8},
-                    { x: new Date(1982,1,1),y:6.1},
-                    { x: new Date(1983,1,1),y:6.7},
-                    { x: new Date(1984,1,1),y:6.9},
-                    { x: new Date(1985,1,1),y:7.1},
-                    { x: new Date(1986,1,1),y:6.5},
-                    { x: new Date(1987,1,1),y:6.1},
-                    { x: new Date(1988,1,1),y:6.2},
-                    { x: new Date(1989,1,1),y:5.6},
-                    { x: new Date(1990,1,1),y:6.2},
-                    { x: new Date(1991,1,1),y:6},
-                    { x: new Date(1992,1,1),y:5.8},
-                    { x: new Date(1993,1,1),y:6.8},
-                    { x: new Date(1994,1,1),y:5.9},
-                    { x: new Date(1995,1,1),y:6},
-                    { x: new Date(1996,1,1),y:6.1},
-                    { x: new Date(1997,1,1),y:5.3},
-                    { x: new Date(1998,1,1),y:1.2},
-                    { x: new Date(1999,1,1),y:6.6},
-                    { x: new Date(2000,1,1),y:5.9},
-                    { x: new Date(2001,1,1),y:6.3},
-                    { x: new Date(2002,1,1),y:5.7},
-                    { x: new Date(2003,1,1),y:6.5},
-                    { x: new Date(2004,1,1),y:5.3},
-                    { x: new Date(2005,1,1),y:5.5},
-                    { x: new Date(2006,1,1),y:4.4},
-                    { x: new Date(2007,1,1),y:4.7},
-                    { x: new Date(2008,1,1),y:5.6},
-                    { x: new Date(2009,1,1),y:6.2},
-                    { x: new Date(2010,1,1),y:5.3},
-                    { x: new Date(2011,1,1),y:3.9},
-                    { x: new Date(2012,1,1),y:3.9},
-                    { x: new Date(2013,1,1),y:3.8},
-                    { x: new Date(2014,1,1),y:3.1},
-                    { x: new Date(2015,1,1),y:3.5},
-                    { x: new Date(2016,1,1),y:3.5},
-                    { x: new Date(2017,1,1),y:3.2},
-                    { x: new Date(2018,1,1),y:3.3},
-                    { x: new Date(2019,1,1),y:3}
-
-                ]
-            },
-            {
-                type: "line",
-                axisYType: "secondary",
-                name: "Height(In Inches)",
-                showInLegend: true,
-                markerSize: 0,
-                dataPoints: [
-                    { x: new Date(1967,1,1),y:77.9},
-                    { x: new Date(1968,1,1),y:78.2},
-                    { x: new Date(1969,1,1),y:77.2},
-                    { x: new Date(1970,1,1),y:78.6},
-                    { x: new Date(1971,1,1),y:79},
-                    { x: new Date(1972,1,1),y:77.2},
-                    { x: new Date(1973,1,1),y:78.5},
-                    { x: new Date(1974,1,1),y:78.4},
-                    { x: new Date(1975,1,1),y:78.4},
-                    { x: new Date(1976,1,1),y:78.1},
-                    { x: new Date(1977,1,1),y:77.7},
-                    { x: new Date(1978,1,1),y:78.2},
-                    { x: new Date(1979,1,1),y:78.4},
-                    { x: new Date(1980,1,1),y:78.1},
-                    { x: new Date(1981,1,1),y:78.4},
-                    { x: new Date(1982,1,1),y:79.1},
-                    { x: new Date(1983,1,1),y:78.9},
-                    { x: new Date(1984,1,1),y:79},
-                    { x: new Date(1985,1,1),y:78.7},
-                    { x: new Date(1986,1,1),y:79.2},
-                    { x: new Date(1987,1,1),y:78.6},
-                    { x: new Date(1988,1,1),y:78.5},
-                    { x: new Date(1989,1,1),y:78.3},
-                    { x: new Date(1990,1,1),y:78.7},
-                    { x: new Date(1991,1,1),y:78.7},
-                    { x: new Date(1992,1,1),y:78.1},
-                    { x: new Date(1993,1,1),y:79.5},
-                    { x: new Date(1994,1,1),y:79.1},
-                    { x: new Date(1995,1,1),y:77.9},
-                    { x: new Date(1996,1,1),y:78.4},
-                    { x: new Date(1997,1,1),y:78.6},
-                    { x: new Date(1998,1,1),y:79.5},
-                    { x: new Date(1999,1,1),y:78.4},
-                    { x: new Date(2000,1,1),y:79.9},
-                    { x: new Date(2001,1,1),y:79.2},
-                    { x: new Date(2002,1,1),y:79.8},
-                    { x: new Date(2003,1,1),y:78.7},
-                    { x: new Date(2004,1,1),y:78.9},
-                    { x: new Date(2005,1,1),y:78.3},
-                    { x: new Date(2006,1,1),y:79.2},
-                    { x: new Date(2007,1,1),y:79.7},
-                    { x: new Date(2008,1,1),y:79.8},
-                    { x: new Date(2009,1,1),y:78.5},
-                    { x: new Date(2010,1,1),y:79.4},
-                    { x: new Date(2011,1,1),y:78.1},
-                    { x: new Date(2012,1,1),y:78.8},
-                    { x: new Date(2013,1,1),y:78.5},
-                    { x: new Date(2014,1,1),y:79},
-                    { x: new Date(2015,1,1),y:79},
-                    { x: new Date(2016,1,1),y:78.1},
-                    { x: new Date(2017,1,1),y:78.3},
-                    { x: new Date(2018,1,1),y:77.8},
-                    { x: new Date(2019,1,1),y:78.3}
-                ]
+                dataPoints: ppg
             }]
             
         })
@@ -567,9 +449,52 @@ function openNav() {
             
         }
       }
+      if (cont4) {
+        CanvasJS.addColorSet("greenShades",
+        [//colorSet Array
+        
+        "#008080",              
+        ]);
+        var chart4 = new CanvasJS.Chart(cont4, {
+        backgroundColor: null,
+        animationEnabled: true,
+        colorSet: "greenShades",
+        title: {
+          text: "Top 50 Players by Games Played",
+          fontColor: "white",
+        },
+        axisX: {
+          labelFontColor: "none",
+          title: "",
+          gridThickness: 0,
+          tickLength: 1,
+          labelAngle: -20,
+          interval: 1,
+        },
+        axisY: {
+          labelFontColor: "white",
+          title: "Number of Games",
+          gridThickness: 0,
+          tickLength: 1,
+          interval: 10,
+          maximum: 100,
+          labelWrap: true,
+          labelFontColor: "white"
+        },
+        data: [
+          {
+            type: "column",
+            toolTipContent:
+              'Name: {label} <br>Height: {y}',
+              dataPoints: height
+          },
+        ]
+        });
+      }
       chart1.render();
       chart2.render();
       chart3.render();
+      chart4.render()
     }
   
     function nodark() {
@@ -597,6 +522,8 @@ function openNav() {
           },
         axisX: {
           labelFontColor: "none",
+          gridThickness: 0,
+          tickLength: 0,
           title: "",
           labelAngle: -20,
           interval: 1,
@@ -604,6 +531,9 @@ function openNav() {
         },
         axisY: {
           title: "Number of Games",
+          
+          gridThickness: 0.5,
+          tickLength: 1,
           interval: 200,
           labelWrap: true
         },
@@ -892,11 +822,14 @@ function openNav() {
                 text: "League Averages by Debut Year"
             },
             axisX: {
-                valueFormatString: "YYYY"
+                valueFormatString: "YYYY",
+                
             },
             axisY2: {
                 title: "",
-                maximum: 100,
+                maximum: 50,
+                gridThickness: 0,
+                tickLength: 1,
             },
             toolTip: {
                 shared: true
@@ -910,190 +843,19 @@ function openNav() {
             },
             data: [
                 {
-                    type:"line",
+                    type:"area",
                     axisYType: "secondary",
                     name: "Wins Contributed",
                     showInLegend: true,
                     markerSize: 0,
-                    dataPoints: [		
-                        { x: new Date(1967,1,1),y:23.1},
-                        { x: new Date(1968,1,1),y:19.7},
-                        { x: new Date(1969,1,1),y:24.2},
-                        { x: new Date(1970,1,1),y:39.4},
-                        { x: new Date(1971,1,1),y:28.1},
-                        { x: new Date(1972,1,1),y:26.3},
-                        { x: new Date(1973,1,1),y:26.6},
-                        { x: new Date(1974,1,1),y:32.9},
-                        { x: new Date(1975,1,1),y:24.9},
-                        { x: new Date(1976,1,1),y:34.4},
-                        { x: new Date(1977,1,1),y:32.6},
-                        { x: new Date(1978,1,1),y:19.5},
-                        { x: new Date(1979,1,1),y:17.6},
-                        { x: new Date(1980,1,1),y:14.4},
-                        { x: new Date(1981,1,1),y:22.6},
-                        { x: new Date(1982,1,1),y:14.7},
-                        { x: new Date(1983,1,1),y:18.5},
-                        { x: new Date(1984,1,1),y:29.3},
-                        { x: new Date(1985,1,1),y:28.3},
-                        { x: new Date(1986,1,1),y:16.1},
-                        { x: new Date(1987,1,1),y:20.3},
-                        { x: new Date(1988,1,1),y:15.2},
-                        { x: new Date(1989,1,1),y:14.1},
-                        { x: new Date(1990,1,1),y:17.1},
-                        { x: new Date(1991,1,1),y:16.7},
-                        { x: new Date(1992,1,1),y:12.2},
-                        { x: new Date(1993,1,1),y:18.2},
-                        { x: new Date(1994,1,1),y:15},
-                        { x: new Date(1995,1,1),y:19.6},
-                        { x: new Date(1996,1,1),y:19.9},
-                        { x: new Date(1997,1,1),y:15.5},
-                        { x: new Date(1998,1,1),y:0},
-                        { x: new Date(1999,1,1),y:21.4},
-                        { x: new Date(2000,1,1),y:14.5},
-                        { x: new Date(2001,1,1),y:20.2},
-                        { x: new Date(2002,1,1),y:14},
-                        { x: new Date(2003,1,1),y:18.1},
-                        { x: new Date(2004,1,1),y:14.2},
-                        { x: new Date(2005,1,1),y:11.7},
-                        { x: new Date(2006,1,1),y:6.1},
-                        { x: new Date(2007,1,1),y:6.8},
-                        { x: new Date(2008,1,1),y:9.6},
-                        { x: new Date(2009,1,1),y:9.6},
-                        { x: new Date(2010,1,1),y:7.8},
-                        { x: new Date(2011,1,1),y:3.1},
-                        { x: new Date(2012,1,1),y:2.6},
-                        { x: new Date(2013,1,1),y:1.5},
-                        { x: new Date(2014,1,1),y:1.2},
-                        { x: new Date(2015,1,1),y:1},
-                        { x: new Date(2016,1,1),y:0.5},
-                        { x: new Date(2017,1,1),y:0.4},
-                        { x: new Date(2018,1,1),y:0},
-                        { x: new Date(2019,1,1),y:0}    
-                    ]
+                    dataPoints: ws
                 },{
-                type:"line",
+                type:"area",
                 axisYType: "secondary",
                 name: "Points Per Game",
                 showInLegend: true,
                 markerSize: 0,
-                dataPoints: [		
-                    { x: new Date(1967,1,1),y:11.6},
-                    { x: new Date(1968,1,1),y:8.5},
-                    { x: new Date(1969,1,1),y:9.6},
-                    { x: new Date(1970,1,1),y:12.2},
-                    { x: new Date(1971,1,1),y:9},
-                    { x: new Date(1972,1,1),y:9.7},
-                    { x: new Date(1973,1,1),y:11.1},
-                    { x: new Date(1974,1,1),y:10.1},
-                    { x: new Date(1975,1,1),y:9.2},
-                    { x: new Date(1976,1,1),y:9.9},
-                    { x: new Date(1977,1,1),y:9.7},
-                    { x: new Date(1978,1,1),y:8.5},
-                    { x: new Date(1979,1,1),y:7.3},
-                    { x: new Date(1980,1,1),y:6.6},
-                    { x: new Date(1981,1,1),y:7.8},
-                    { x: new Date(1982,1,1),y:6.1},
-                    { x: new Date(1983,1,1),y:6.7},
-                    { x: new Date(1984,1,1),y:6.9},
-                    { x: new Date(1985,1,1),y:7.1},
-                    { x: new Date(1986,1,1),y:6.5},
-                    { x: new Date(1987,1,1),y:6.1},
-                    { x: new Date(1988,1,1),y:6.2},
-                    { x: new Date(1989,1,1),y:5.6},
-                    { x: new Date(1990,1,1),y:6.2},
-                    { x: new Date(1991,1,1),y:6},
-                    { x: new Date(1992,1,1),y:5.8},
-                    { x: new Date(1993,1,1),y:6.8},
-                    { x: new Date(1994,1,1),y:5.9},
-                    { x: new Date(1995,1,1),y:6},
-                    { x: new Date(1996,1,1),y:6.1},
-                    { x: new Date(1997,1,1),y:5.3},
-                    { x: new Date(1998,1,1),y:1.2},
-                    { x: new Date(1999,1,1),y:6.6},
-                    { x: new Date(2000,1,1),y:5.9},
-                    { x: new Date(2001,1,1),y:6.3},
-                    { x: new Date(2002,1,1),y:5.7},
-                    { x: new Date(2003,1,1),y:6.5},
-                    { x: new Date(2004,1,1),y:5.3},
-                    { x: new Date(2005,1,1),y:5.5},
-                    { x: new Date(2006,1,1),y:4.4},
-                    { x: new Date(2007,1,1),y:4.7},
-                    { x: new Date(2008,1,1),y:5.6},
-                    { x: new Date(2009,1,1),y:6.2},
-                    { x: new Date(2010,1,1),y:5.3},
-                    { x: new Date(2011,1,1),y:3.9},
-                    { x: new Date(2012,1,1),y:3.9},
-                    { x: new Date(2013,1,1),y:3.8},
-                    { x: new Date(2014,1,1),y:3.1},
-                    { x: new Date(2015,1,1),y:3.5},
-                    { x: new Date(2016,1,1),y:3.5},
-                    { x: new Date(2017,1,1),y:3.2},
-                    { x: new Date(2018,1,1),y:3.3},
-                    { x: new Date(2019,1,1),y:3}
-
-                ]
-            },
-            {
-                type: "line",
-                axisYType: "secondary",
-                name: "Height(In Inches)",
-                showInLegend: true,
-                markerSize: 0,
-                dataPoints: [
-                    { x: new Date(1967,1,1),y:77.9},
-                    { x: new Date(1968,1,1),y:78.2},
-                    { x: new Date(1969,1,1),y:77.2},
-                    { x: new Date(1970,1,1),y:78.6},
-                    { x: new Date(1971,1,1),y:79},
-                    { x: new Date(1972,1,1),y:77.2},
-                    { x: new Date(1973,1,1),y:78.5},
-                    { x: new Date(1974,1,1),y:78.4},
-                    { x: new Date(1975,1,1),y:78.4},
-                    { x: new Date(1976,1,1),y:78.1},
-                    { x: new Date(1977,1,1),y:77.7},
-                    { x: new Date(1978,1,1),y:78.2},
-                    { x: new Date(1979,1,1),y:78.4},
-                    { x: new Date(1980,1,1),y:78.1},
-                    { x: new Date(1981,1,1),y:78.4},
-                    { x: new Date(1982,1,1),y:79.1},
-                    { x: new Date(1983,1,1),y:78.9},
-                    { x: new Date(1984,1,1),y:79},
-                    { x: new Date(1985,1,1),y:78.7},
-                    { x: new Date(1986,1,1),y:79.2},
-                    { x: new Date(1987,1,1),y:78.6},
-                    { x: new Date(1988,1,1),y:78.5},
-                    { x: new Date(1989,1,1),y:78.3},
-                    { x: new Date(1990,1,1),y:78.7},
-                    { x: new Date(1991,1,1),y:78.7},
-                    { x: new Date(1992,1,1),y:78.1},
-                    { x: new Date(1993,1,1),y:79.5},
-                    { x: new Date(1994,1,1),y:79.1},
-                    { x: new Date(1995,1,1),y:77.9},
-                    { x: new Date(1996,1,1),y:78.4},
-                    { x: new Date(1997,1,1),y:78.6},
-                    { x: new Date(1998,1,1),y:79.5},
-                    { x: new Date(1999,1,1),y:78.4},
-                    { x: new Date(2000,1,1),y:79.9},
-                    { x: new Date(2001,1,1),y:79.2},
-                    { x: new Date(2002,1,1),y:79.8},
-                    { x: new Date(2003,1,1),y:78.7},
-                    { x: new Date(2004,1,1),y:78.9},
-                    { x: new Date(2005,1,1),y:78.3},
-                    { x: new Date(2006,1,1),y:79.2},
-                    { x: new Date(2007,1,1),y:79.7},
-                    { x: new Date(2008,1,1),y:79.8},
-                    { x: new Date(2009,1,1),y:78.5},
-                    { x: new Date(2010,1,1),y:79.4},
-                    { x: new Date(2011,1,1),y:78.1},
-                    { x: new Date(2012,1,1),y:78.8},
-                    { x: new Date(2013,1,1),y:78.5},
-                    { x: new Date(2014,1,1),y:79},
-                    { x: new Date(2015,1,1),y:79},
-                    { x: new Date(2016,1,1),y:78.1},
-                    { x: new Date(2017,1,1),y:78.3},
-                    { x: new Date(2018,1,1),y:77.8},
-                    { x: new Date(2019,1,1),y:78.3}
-                ]
+                dataPoints: ppg
             }]
             
         })
@@ -1107,8 +869,51 @@ function openNav() {
             
         }
       }
+      if (cont4) {
+        
+        CanvasJS.addColorSet("greenShades",
+        [//colorSet Array
+        
+        "#008080",              
+        ]);
+        var chart4 = new CanvasJS.Chart(cont4, {
+        backgroundColor: null,
+        animationEnabled: true,
+        colorSet: "greenShades",
+        title: {
+          text: "Top 50 Players by Games Played",
+          fontColor: "white",
+        },
+        axisX: {
+          labelFontColor: "none",
+          title: "",
+          gridThickness: 0,
+          tickLength: 1,
+          labelAngle: -20,
+          interval: 1,
+        },
+        axisY: {
+            title: "Number of Games",
+            gridThickness: 0,
+            tickLength: 1,
+            interval: 10,
+            maximum: 100,
+            labelWrap: true,
+            labelFontColor: "white"
+          },
+          data: [
+            {
+              type: "column",
+              toolTipContent:
+                'Name: {label} <br>Height: {y}',
+                dataPoints: height
+            },
+          ]
+          });
+      }
       chart1.render();
       chart2.render();
       chart3.render();
+      chart4.render()
     }
   });
