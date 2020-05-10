@@ -2,12 +2,12 @@ function openNav() {
     document.getElementById("mySidebar").style.display = "block";
     document.getElementById("myOverlay").style.display = "block";
     document.getElementById("topBar").style.display = "none";
-  }  
-  function closeNav() {
-    document.getElementById("mySidebar").style.display = "none";
-    document.getElementById("myOverlay").style.display = "none";
-    document.getElementById("topBar").style.display = "block";
-  }  
+}  
+function closeNav() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+  document.getElementById("topBar").style.display = "block";
+}  
 
 window.addEventListener("load", () => {
   var height = [];
@@ -21,7 +21,7 @@ window.addEventListener("load", () => {
       .then(y => {
         for(let i = 0; i < y.length; i+=1) {            
             height.push( { label: label[i], y: y[i]});
-          }
+          }          
         })
     });  
   var ws = [];
@@ -297,7 +297,7 @@ window.addEventListener("load", () => {
         animationEnabled: true,
         colorSet: "greenShades",
         title: {
-          text: "Top 50 Players by Games Played",
+          text: "Player Heights All-Time",
           fontColor: "white",
         },
         axisX: {
@@ -310,7 +310,7 @@ window.addEventListener("load", () => {
         },
         axisY: {
           labelFontColor: "white",
-          title: "Number of Games",
+          title: "Height in Inches",
           gridThickness: 0,
           tickLength: 1,
           interval: 10,
@@ -499,8 +499,7 @@ window.addEventListener("load", () => {
         animationEnabled: true,
         colorSet: "greenShades",
         title: {
-          text: "Top 50 Players by Games Played",
-          fontColor: "white",
+          text: "Player Heights All-Time",
         },
         axisX: {
           labelFontColor: "none",
@@ -511,13 +510,12 @@ window.addEventListener("load", () => {
           interval: 1,
         },
         axisY: {
-            title: "Number of Games",
+            title: "Height in Inches",
             gridThickness: 0,
             tickLength: 1,
             interval: 10,
             maximum: 100,
             labelWrap: true,
-            labelFontColor: "white"
           },
           data: [
             {
