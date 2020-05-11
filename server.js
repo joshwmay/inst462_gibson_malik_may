@@ -126,4 +126,15 @@ app.get('/ws', (req, res) => {
         res.redirect('/error');
           })
   });
+  app.get('/ast50', (req, res) => {
+    const baseURL = 'http://localhost:' + port + '/json/ast_t50.json';
+    fetch(baseURL)
+      .then(res => res.json())
+      .then(data => {        
+        res.send({ data: data });
+          })
+        .catch((err) => {        
+        res.redirect('/error');
+          })
+  });
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
