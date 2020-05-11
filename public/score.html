@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>INST 462 Final Projec - About</title>
+  <title>INST 462 Final Project - Scoring</title>
   <meta name = "Luke Gibson, Tarun Malik, Joshua May" content = "Group Project for INST 462">
   <link rel = "stylesheet" href  = "css/styles.css">
   <link rel="shortcut icon" type="image/png" href="favicon.png"/>
   <link rel = "stylesheet" href = "https://www.w3schools.com/w3css/4/w3.css">
   <link rel = "stylesheet" href = "https://fonts.googleapis.com/css?family=Poppins">
   <script src = "js/script.js"></script>
+  <script src = "https://cdnjs.cloudflare.com/ajax/libs/sigma.js/1.2.1/sigma.min.js"></script>
+  <script src = "https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"></script>
 </head>
 <body>
   <!-- Sidebar/menu -->
@@ -19,18 +21,18 @@
     style="width:100%;font-size:22px">☰</a>
 
     <div class="w3-container">
-      <h3 class="w3-padding-26"><b>INST 462 Final Project</b></h3>
+      <h3 class="w3-padding-26"><b>INST462 Final Project</b></h3>
     </div>
     <hr>
     <div class="w3-bar-block">
-      <a href="index.html" onclick="closeNav()" class="w3-bar-item w3-button w3-hover-white">Home</a>
-      <hr>
-      <a href="about.html" onclick="closeNav()" class="w3-bar-item w3-button w3-hover-white">About</a>
-      <hr>
-      <a href="score.html" onclick="closeNav()" class="w3-bar-item w3-button w3-hover-white">Scoring</a>
-      <hr>
-      <a href="assist.html" onclick="closeNav()" class="w3-bar-item w3-button w3-hover-white">Assists</a>
-      <hr>
+        <a href="index.html" onclick="closeNav()" class="w3-bar-item w3-button w3-hover-white">Home</a>
+        <hr>
+        <a href="about.html" onclick="closeNav()" class="w3-bar-item w3-button w3-hover-white">About</a>
+        <hr>
+        <a href="score.html" onclick="closeNav()" class="w3-bar-item w3-button w3-hover-white">Scoring</a>
+        <hr>
+        <a href="assist.html" onclick="closeNav()" class="w3-bar-item w3-button w3-hover-white">Assists</a>
+        <hr>
       <p>Darkmode</p>
       <div class="switch">
         <label for="dark">
@@ -51,7 +53,7 @@
 
   <!--START OF PAGE CONTENT-->
   <div class="main">
-      <h1>INST 462 Project ~ Under Construction</h1>
+    <div class="full_w" id="chart2"></div>
   </div>
 </body>
 </html>
