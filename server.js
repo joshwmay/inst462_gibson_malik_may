@@ -55,6 +55,30 @@ app.get('/height', (req, res) => {
         })
 });
 
+app.get('/ast_ht', (req, res) => {
+  const baseURL = 'http://localhost:' + port + '/json/ast_hts.json';
+  fetch(baseURL)
+    .then(res => res.json())
+    .then(data => {      
+      res.send({ data: data });
+        })
+      .catch((err) => {      
+      res.redirect('/error');
+        })
+});
+app.get('/trb_ht', (req, res) => {
+  const baseURL = 'http://localhost:' + port + '/json/trb_hts.json';
+  fetch(baseURL)
+    .then(res => res.json())
+    .then(data => {      
+      res.send({ data: data });
+        })
+      .catch((err) => {      
+      res.redirect('/error');
+        })
+});
+
+
 app.get('/ws', (req, res) => {
     const baseURL = 'http://localhost:' + port + '/json/ws.json';
     fetch(baseURL)
