@@ -109,6 +109,35 @@ fetch("/ws")
         }
       })
   });  
+  var ast_ht = [];
+fetch("/ast_ht")
+  .then(res => res.json())
+  .then(res => res.data.map(c => c.x))
+  .then(x => {
+    fetch("/ast_ht")
+    .then(res => res.json())
+    .then(res => res.data.map(c => c.y))
+    .then(y => {
+      for(let i = 0; i < y.length; i+=1) {            
+          ast_ht.push( { label: x[i], y: y[i]});
+        }          
+      })
+  });
+  var trb_ht = [];
+  fetch("/trb_ht")
+    .then(res => res.json())
+    .then(res => res.data.map(c => c.x))
+    .then(x => {
+      fetch("/trb_ht")
+      .then(res => res.json())
+      .then(res => res.data.map(c => c.y))
+      .then(y => {
+        for(let i = 0; i < y.length; i+=1) {            
+            trb_ht.push( { label: x[i], y: y[i]});
+          }          
+        })
+    });
+  
   var ast50 = [];
   fetch("/ast50")
   .then(res => res.json())
@@ -260,6 +289,9 @@ fetch("/ws")
     title: {
       text: "Player Height Distribution All-Time",
       fontColor: "white",
+    },    
+    legend : {
+      fontColor: "white"
     },
     axisX: {
       labelFontColor: "none",
@@ -282,10 +314,31 @@ fetch("/ws")
     data: [
       {
         type: "column",
-        toolTipContent:
-          'Instances: {label} <br>Height: {y}',
-          dataPoints: height
+        showInLegend: true,
+        color: "gold",
+        fontColor:"white",
+        legendText:"All time heights",
+        toolTipContent: 'Height: {label} <br>Instances: {y}',
+        dataPoints: height
       },
+      {        
+        type: "column",
+		    showInLegend: true,
+		    color: "red",
+        fontColor:"white",
+        legendText:"Assist leaders(450)",
+        toolTipContent: 'Height: {label} <br>Instances: {y}',
+        dataPoints: ast_ht
+      },
+      {
+        type: "column",
+        showInLegend: true,
+        toolTipContent: 'Height: {x} <br>Instances: {y}',
+        color: "green",  
+        fontColor:"white",
+        legendText:"Rebound Leaders(450)",        
+        dataPoints: trb_ht
+      }
     ]
     });
     chart4.render();
@@ -515,6 +568,9 @@ fetch("/ws")
       labelAngle: -20,
       interval: 1,
     },
+    legend : {
+      fontColor: "black"
+    },
     axisY: {
         title: "Occurrences",
         gridThickness: 0,
@@ -526,10 +582,29 @@ fetch("/ws")
       data: [
         {
           type: "column",
-          toolTipContent:
-            'Instances: {label} <br>Height: {y}',
-            dataPoints: height
+          showInLegend: true,
+          color: "gold",
+          legendText:"All time heights",
+          toolTipContent: 'Height: {label} <br>Instances: {y}',
+          dataPoints: height
         },
+        {        
+          type: "column",
+          showInLegend: true,
+          color: "red",
+          legendText:"Assist Leaders(450)",
+          toolTipContent: 'Height: {label} <br>Instances: {y}',
+          dataPoints: ast_ht
+        },
+        {
+          type: "column",
+          showInLegend: true,
+          toolTipContent: 'Height: {x} <br>Instances: {y}',
+          color: "green", 
+          fontColor:"white",
+          legendText:"Rebound Leaders(450)",        
+          dataPoints: trb_ht
+        }
       ]
       });
       chart4.render();
