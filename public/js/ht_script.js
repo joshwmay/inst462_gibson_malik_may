@@ -69,7 +69,24 @@ window.addEventListener("load", () => {
 						});
 					}
 				})
-		});
+        });
+    var ws_ht = [];
+    fetch("/ws_ht")
+	.then(res => res.json())
+	.then(res => res.data.map(c => c.x))
+	.then(x => {
+		fetch("/ws_ht")
+			.then(res => res.json())
+			.then(res => res.data.map(c => c.y))
+			.then(y => {
+				for (let i = 0; i < y.length; i += 1) {
+					ws_ht.push({
+						label: x[i],
+						y: y[i]
+					});
+				}
+			})
+	});
     const cont4 = document.querySelector("#chart4");
     const cont5 = document.querySelector("#chart5");
 	const checkbox = document.querySelector("#dark");
@@ -213,6 +230,14 @@ window.addEventListener("load", () => {
 					fontColor: "white",
 					legendText: "Rebound Leaders(450)",
 					dataPoints: trb_ht
+				}, {
+					type: "column",
+					showInLegend: true,
+					toolTipContent: 'Height: {x} <br>Instances: {y}',
+					color: "yellow",
+					fontColor: "white",
+					legendText: "WS Leaders(450)",
+					dataPoints: ws_ht
 				}]
 			});
         chart5.render()
@@ -321,6 +346,14 @@ window.addEventListener("load", () => {
 					fontColor: "white",
 					legendText: "Rebound Leaders(450)",
 					dataPoints: trb_ht
+				}, {
+					type: "column",
+					showInLegend: true,
+					toolTipContent: 'Height: {x} <br>Instances: {y}',
+					color: "yellow",
+					fontColor: "white",
+					legendText: "WS` Leaders(450)",
+					dataPoints: ws_ht
 				}]
 			});
             chart5.render()

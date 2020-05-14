@@ -161,4 +161,15 @@ app.get('/ws', (req, res) => {
         res.redirect('/error');
           })
   });
+  app.get('/ws_ht', (req, res) => {
+    const baseURL = 'http://localhost:' + port + '/json/ws_ht.json';
+    fetch(baseURL)
+      .then(res => res.json())
+      .then(data => {        
+        res.send({ data: data });
+          })
+        .catch((err) => {        
+        res.redirect('/error');
+          })
+  });
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
