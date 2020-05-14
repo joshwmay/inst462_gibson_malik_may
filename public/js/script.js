@@ -9,22 +9,12 @@ document.getElementById("myOverlay").style.display = "none";
 document.getElementById("topBar").style.display = "block";
 }  
 
+window.addEventListener('online', (event) => {
+  console.log("You are now connected to the network.");
+});
+
 window.addEventListener("load", () => {
 var x = 0;
-var height = [];
-fetch("/height")
-  .then(res => res.json())
-  .then(res => res.data.map(c => c.x))
-  .then(x => {
-    fetch("/height")
-    .then(res => res.json())
-    .then(res => res.data.map(c => c.y))
-    .then(y => {
-      for(let i = 0; i < y.length; i+=1) {            
-          height.push( { label: x[i], y: y[i]});
-        }          
-      })
-  });  
 var ws = [];
 fetch("/ws")
   .then(res => res.json())
@@ -109,34 +99,7 @@ fetch("/ws")
         }
       })
   });  
-  var ast_ht = [];
-fetch("/ast_ht")
-  .then(res => res.json())
-  .then(res => res.data.map(c => c.x))
-  .then(x => {
-    fetch("/ast_ht")
-    .then(res => res.json())
-    .then(res => res.data.map(c => c.y))
-    .then(y => {
-      for(let i = 0; i < y.length; i+=1) {            
-          ast_ht.push( { label: x[i], y: y[i]});
-        }          
-      })
-  });
   var trb_ht = [];
-  fetch("/trb_ht")
-    .then(res => res.json())
-    .then(res => res.data.map(c => c.x))
-    .then(x => {
-      fetch("/trb_ht")
-      .then(res => res.json())
-      .then(res => res.data.map(c => c.y))
-      .then(y => {
-        for(let i = 0; i < y.length; i+=1) {            
-            trb_ht.push( { label: x[i], y: y[i]});
-          }          
-        })
-    });
   
   var ast50 = [];
   fetch("/ast50")
@@ -155,10 +118,12 @@ fetch("/ast_ht")
   const cont1 = document.querySelector("#chart1");
   const cont2 = document.querySelector("#chart2");
   const cont3 = document.querySelector("#chart3");
-  const cont4 = document.querySelector("#chart4");
   const cont5 = document.querySelector("#chart5");
   const checkbox = document.querySelector("#dark");
   const start = document.querySelector("#start");
+  if (x === 0) {
+    start.style.fontSize = "xx-large"
+  } 
   if (sessionStorage.getItem("mode") == "dark") {
     darkmode();
   } 
@@ -166,17 +131,24 @@ fetch("/ast_ht")
     nodark();
   }
   checkbox.addEventListener("change", function() {
-    x ++
-    if (checkbox.checked) {
-      if(x>0){
-        start.innerHTML = "Darkmode";
-      }
-      darkmode();
-    } else {
-      nodark();
-      start.innerHTML = "Darkmode";
-    }
-  });
+		x++
+		if (checkbox.checked) {
+			if (x > 0) {
+                start.innerHTML = "Darkmode";
+                start.style.fontSize = "medium";
+                start.style.justifycontent = "center";
+            
+            }
+			darkmode();
+
+		} else {
+			nodark();
+			start.innerHTML = "Darkmode";
+            start.style.fontSize = "medium";
+            start.style.justifycontent = "center";
+
+		}
+	});
   function darkmode() {
     document.body.classList.add("dark-mode");
     checkbox.checked = true;
@@ -282,66 +254,7 @@ fetch("/ast_ht")
     [//colorSet Array        
     "#008080",              
     ]);
-    var chart4 = new CanvasJS.Chart(cont4, {
-    backgroundColor: null,
-    animationEnabled: true,
-    colorSet: "greenShades",
-    title: {
-      text: "Player Height Distribution All-Time",
-      fontColor: "white",
-    },    
-    legend : {
-      fontColor: "white"
-    },
-    axisX: {
-      labelFontColor: "none",
-      title: "Height in Inches",
-      gridThickness: 0,
-      tickLength: 1,
-      labelAngle: -20,
-      interval: 1,
-    },
-    axisY: {
-      labelFontColor: "white",
-      title: "Occurrences",
-      gridThickness: 0,
-      tickLength: 1,
-      interval: 50,
-      maximum: 300,
-      labelWrap: true,
-      labelFontColor: "white"
-    },
-    data: [
-      {
-        type: "column",
-        showInLegend: true,
-        color: "gold",
-        fontColor:"white",
-        legendText:"All time heights",
-        toolTipContent: 'Height: {label} <br>Instances: {y}',
-        dataPoints: height
-      },
-      {        
-        type: "column",
-		    showInLegend: true,
-		    color: "red",
-        fontColor:"white",
-        legendText:"Assist leaders(450)",
-        toolTipContent: 'Height: {label} <br>Instances: {y}',
-        dataPoints: ast_ht
-      },
-      {
-        type: "column",
-        showInLegend: true,
-        toolTipContent: 'Height: {x} <br>Instances: {y}',
-        color: "green",  
-        fontColor:"white",
-        legendText:"Rebound Leaders(450)",        
-        dataPoints: trb_ht
-      }
-    ]
-    });
-    chart4.render();
+   
     }
     if (cont2) {
       var chart2 = new CanvasJS.Chart(cont2, {
@@ -499,115 +412,6 @@ fetch("/ast_ht")
       ]
       });
       chart1.render();
-      var chart3 = new CanvasJS.Chart(cont3, {
-        backgroundColor: null,
-        title: {
-            text: "League Averages by Debut Year"
-        },
-        axisX: {
-            valueFormatString: "YYYY",                
-        },
-        axisY2: {
-            title: "",
-            maximum: 50,
-            gridThickness: 0,
-            tickLength: 1,
-        },
-        toolTip: {
-            shared: true
-        },
-        legend: {
-            cursor: "pointer",
-            verticalAlign: "top",
-            horizontalAlign: "center",
-            dockInsidePlotArea: true,
-            itemclick: toogleDataSeries
-        },
-        data: [
-            {
-                type:"area",
-                axisYType: "secondary",
-                name: "Wins Contributed",
-                showInLegend: true,
-                markerSize: 0,
-                dataPoints: ws
-            },{
-            type:"area",
-            axisYType: "secondary",
-            name: "Points Per Game",
-            showInLegend: true,
-            markerSize: 0,
-            dataPoints: ppg
-        }]            
-    })        
-    function toogleDataSeries(e){
-        if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-            e.dataSeries.visible = false;
-        } else{
-            e.dataSeries.visible = true;
-        }            
-    }
-    chart3.render();
-          
-    CanvasJS.addColorSet("greenShades",
-    [//colorSet Array        
-    "#008080",              
-    ]);
-    var chart4 = new CanvasJS.Chart(cont4, {
-    backgroundColor: null,
-    animationEnabled: true,
-    colorSet: "greenShades",
-    title: {
-      text: "Player Height Distribution All-Time",
-    },
-    axisX: {
-      labelFontColor: "none",
-      title: "Height in Inches",
-      gridThickness: 0,
-      tickLength: 1,
-      labelAngle: -20,
-      interval: 1,
-    },
-    legend : {
-      fontColor: "black"
-    },
-    axisY: {
-        title: "Occurrences",
-        gridThickness: 0,
-        tickLength: 1,
-        interval: 50,
-        maximum: 300,
-        labelWrap: true,
-      },
-      data: [
-        {
-          type: "column",
-          showInLegend: true,
-          color: "gold",
-          legendText:"All time heights",
-          toolTipContent: 'Height: {label} <br>Instances: {y}',
-          dataPoints: height
-        },
-        {        
-          type: "column",
-          showInLegend: true,
-          color: "red",
-          legendText:"Assist Leaders(450)",
-          toolTipContent: 'Height: {label} <br>Instances: {y}',
-          dataPoints: ast_ht
-        },
-        {
-          type: "column",
-          showInLegend: true,
-          toolTipContent: 'Height: {x} <br>Instances: {y}',
-          color: "green", 
-          fontColor:"white",
-          legendText:"Rebound Leaders(450)",        
-          dataPoints: trb_ht
-        }
-      ]
-      });
-      chart4.render();
     }
     if (cont2) {
       var chart2 = new CanvasJS.Chart(cont2, {
@@ -664,7 +468,59 @@ fetch("/ast_ht")
       ]            
       });     
       chart2.render();
-    }   
+    } 
+    if(cont3){
+      var chart3 = new CanvasJS.Chart(cont3, {
+        backgroundColor: null,
+        title: {
+            text: "League Averages by Debut Year"
+        },
+        axisX: {
+            valueFormatString: "YYYY",                
+        },
+        axisY2: {
+            title: "",
+            maximum: 50,
+            gridThickness: 0,
+            tickLength: 1,
+        },
+        toolTip: {
+            shared: true
+        },
+        legend: {
+            cursor: "pointer",
+            verticalAlign: "top",
+            horizontalAlign: "center",
+            dockInsidePlotArea: true,
+            itemclick: toogleDataSeries
+        },
+        data: [
+            {
+                type:"area",
+                axisYType: "secondary",
+                name: "Wins Contributed",
+                showInLegend: true,
+                markerSize: 0,
+                dataPoints: ws
+            },{
+            type:"area",
+            axisYType: "secondary",
+            name: "Points Per Game",
+            showInLegend: true,
+            markerSize: 0,
+            dataPoints: ppg
+        }]            
+    })        
+    function toogleDataSeries(e){
+        if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+            e.dataSeries.visible = false;
+        } else{
+            e.dataSeries.visible = true;
+        }            
+    }
+    chart3.render();
+    }
+
     if (cont5) {
       CanvasJS.addColorSet("greenShades",
       [//colorSet Array        
