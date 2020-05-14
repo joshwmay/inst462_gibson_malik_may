@@ -29,7 +29,7 @@ window.addEventListener("load", () => {
 				.then(y => {
 					for (let i = 0; i < y.length; i += 1) {
 						height.push({
-							label: x[i],
+							x: x[i],
 							y: y[i]
 						});
 					}
@@ -47,7 +47,7 @@ window.addEventListener("load", () => {
 				.then(y => {
 					for (let i = 0; i < y.length; i += 1) {
 						ast_ht.push({
-							label: x[i],
+							x: x[i],
 							y: y[i]
 						});
 					}
@@ -64,7 +64,7 @@ window.addEventListener("load", () => {
 				.then(y => {
 					for (let i = 0; i < y.length; i += 1) {
 						trb_ht.push({
-							label: x[i],
+							x: x[i],
 							y: y[i]
 						});
 					}
@@ -81,14 +81,32 @@ window.addEventListener("load", () => {
 			.then(y => {
 				for (let i = 0; i < y.length; i += 1) {
 					ws_ht.push({
-						label: x[i],
+						x: x[i],
+						y: y[i]
+					});
+				}
+			})
+	});
+	var ht_summ = [];
+	fetch("/ht_summ")
+	.then(res => res.json())
+	.then(res => res.data.map(c => c.x))
+	.then(x => {
+		fetch("/ht_summ")
+			.then(res => res.json())
+			.then(res => res.data.map(c => c.y))
+			.then(y => {
+				for (let i = 0; i < y.length; i += 1) {
+					ht_summ.push({
+						x: x[i],
 						y: y[i]
 					});
 				}
 			})
 	});
     const cont4 = document.querySelector("#chart4");
-    const cont5 = document.querySelector("#chart5");
+	const cont5 = document.querySelector("#chart5");
+	const cont6 = document.querySelector("#chart6");
 	const checkbox = document.querySelector("#dark");
     const start = document.querySelector("#start");
     if (x === 0) {
@@ -188,7 +206,7 @@ window.addEventListener("load", () => {
 				animationEnabled: true,
 				colorSet: "greenShades",
 				title: {
-                    text: "Top 450 Players by Assists and Rebounds Height Distribution",
+                    text: "Stat Leader Height Distributions",
                     wrap: true,
                     horizontalAlign: "center",
                     fontColor: "white",
@@ -241,8 +259,41 @@ window.addEventListener("load", () => {
 				}]
 			});
         chart5.render()
-        }
-		
+		}
+		if (cont6) {
+			var chart6 = new CanvasJS.Chart(cont6, {
+				animationEnabled: true,
+				backgroundColor: null,
+				title:{
+					text: "Average Points by Height(inches)",
+					fontColor: "white"
+				},
+				axisX: {
+					title: "Average Points",
+					interval: 1,
+					minimum: 64,
+					maximum: 92,
+					labelFontColor: "white",
+				},
+				axisY: {
+					title: "Average Points",
+					interval: 5,
+					maximum: 35,
+					labelFontColor: "white",
+				},
+				data: [{
+					type: "boxAndWhisker",					
+					upperBoxColor: "#68FF5A",
+					lowerBoxColor: "#6A57FF",
+					whiskerColor: "white",
+					stemColor: "white",
+					color: "black",
+					yValueFormatString: "##.,##",
+					dataPoints: ht_summ
+				}]
+			});
+			chart6.render();
+		  }
 	}
 
 	function nodark() {
@@ -308,7 +359,7 @@ window.addEventListener("load", () => {
 				animationEnabled: true,
 				colorSet: "greenShades",
 				title: {
-                    text: "Top 450 Players by Assists and Rebounds Height Distribution",
+                    text: "Stat Leader Height Distributions",
                     wrap: true,
                     horizontalAlign: "center",
 				},
@@ -357,6 +408,35 @@ window.addEventListener("load", () => {
 				}]
 			});
             chart5.render()
-        }
+		}
+		if (cont6) {
+			var chart6 = new CanvasJS.Chart(cont6, {
+				animationEnabled: true,
+				backgroundColor: null,
+				title:{
+					text: "Average Points by Height(inches)",
+				},
+				axisX: {
+					title: "Average Points",
+					interval: 1,
+					minimum: 64,
+					maximum: 92,
+				},
+				axisY: {
+					title: "Average Points",
+					interval: 5,
+					maximum: 35,
+				},
+				data: [{
+					type: "boxAndWhisker",
+					upperBoxColor: "#68FF5A",
+					lowerBoxColor: "#6A57FF",
+					color: "black",
+					yValueFormatString: "##.,##",
+					dataPoints: ht_summ
+				}]
+			});
+			chart6.render();
+		  }
 	}
 });

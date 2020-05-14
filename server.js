@@ -165,7 +165,20 @@ app.get('/ws', (req, res) => {
     const baseURL = 'http://localhost:' + port + '/json/ws_ht.json';
     fetch(baseURL)
       .then(res => res.json())
-      .then(data => {        
+      .then(data => {   
+        console.log(data)     
+        res.send({ data: data });
+          })
+        .catch((err) => {        
+        res.redirect('/error');
+          })
+  });
+  app.get('/ht_summ', (req, res) => {
+    const baseURL = 'http://localhost:' + port + '/json/ht_summ.json';
+    fetch(baseURL)
+      .then(res => res.json())
+      .then(data => { 
+        console.log(data)       
         res.send({ data: data });
           })
         .catch((err) => {        
