@@ -9,9 +9,23 @@ document.getElementById("myOverlay").style.display = "none";
 document.getElementById("topBar").style.display = "block";
 }  
 
-window.addEventListener('online', (event) => {
-  console.log("You are now connected to the network.");
-});
+function openDesc(int) {
+	var str = "open";
+	var str2 = "butt";
+	str += int;
+	str2 += int;
+	document.getElementById(str).style.display = "block";
+	document.getElementById(str2).style.display = "none";
+}
+
+function closeDesc(int) {
+	var str = "open";
+	var str2 = "butt";
+	str += int;
+	str2 += int;
+	document.getElementById(str).style.display = "none";
+	document.getElementById(str2).style.display = "block";
+}
 
 window.addEventListener("load", () => {
 var x = 0;
@@ -122,7 +136,7 @@ fetch("/ws")
   const checkbox = document.querySelector("#dark");
   const start = document.querySelector("#start");
   if (x === 0) {
-    start.style.fontSize = "xx-large"
+    start.style.fontSize = "x-large"
   } 
   if (sessionStorage.getItem("mode") == "dark") {
     darkmode();
