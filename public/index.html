@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>INST 462 Final Project - Home</title>
+  <title>INST 462 Project - Home</title>
   <meta name = "Luke Gibson, Tarun Malik, Joshua May" content = "Group Project for INST 462">
   <link rel = "stylesheet" href  = "css/styles.css">
   <link rel="shortcut icon" type="image/png" href="favicon.png"/>
@@ -20,14 +20,12 @@
     style="width:100%;font-size:22px">☰</a>
 
     <div class="w3-container">
-      <h3 class="w3-padding-26"><b>INST 462 Final Project</b></h3>
+      <h3 class="w3-padding-26"><b>INST 462 Project</b></h3>
     </div>
     <hr>
     <div class="w3-bar-block">
       <a href="index.html" onclick="closeNav()" class="w3-bar-item w3-button w3-hover-white">Home</a>
-      <hr>      
-      <a href="over.html" onclick="closeNav()" class="w3-bar-item w3-button w3-hover-white">Overview</a>
-      <hr>
+      <hr> 
       <a href="height.html" onclick="closeNav()" class="w3-bar-item w3-button w3-hover-white">Height Analysis</a>
       <hr>
       <a href="score.html" onclick="closeNav()" class="w3-bar-item w3-button w3-hover-white">Scoring</a>
@@ -46,7 +44,7 @@
   <!-- Top menu on small screens -->
   <header class="w3-container w3-top w3-hide-large w3-xlarge w3-padding" id="topBar">
     <a href="javascript:void(0)" class="w3-button w3-margin-right" onclick="openNav()">☰</a>
-    <span><b>INST 462 Final Project</b></span>
+    <span><b>INST 462 Project</b></span>
   </header>
 
    <!-- Overlay effect when opening sidebar on small screens -->
@@ -54,6 +52,44 @@
 
   <!--START OF PAGE CONTENT-->
   <div class="main">
+    <h1><b>Site Description:</b></h1>
+    <p>This website has been designed to look at data visualizations using NBA statistics and create a data-driven story with them. 
+      This is all en route to the completion of a final group project in a data visualization course at the University of Maryland. 
+      Visualizations and analysis have been done using different tools and this website serves to present the work completed.
+    </p>
+    <p><i>Please be aware, this site relies on a 'Populate Data' switch that appears in the dropdown/side menu. In order to show the 
+      data be sure to check this switch. After clicking, the switch is used for darkmode purposes.
+    </i></p>
+    <h1><b>Dataset Description:</b></h1>
+    <p>The dataset used for this site can be found <a href="https://github.com/joshwmay/inst462_gibson_malik_may/blob/master/public/csv/master_clean.csv">
+      here</a>. This data was obtained from <a href="https://www.basketball-reference.com/">basketball-reference.com</a>, but is incomplete.
+      This is because the dataset was imperfectly scraped with a focus on breadth. While certain players may be missing that should appear in 
+      statistical leader categories, the numbers themselves do belong in the rows of data they appear with; and there is still a story to be told.
+    </p> 
+    <h1><b>Overview</b></h1>   
+    <p>Below are some general visualizations that attempt to encapsulate some general statistics. The portions of this site that contain javascript 
+      visualizations appear as seen below, with the interactive visual appearing above a collapsible description.</p>
+    <div  id="chart1"></div>
+    <div class="butt" id="butt1" onClick="openDesc('1')" title="View Top 50 Players by Games Played Details">
+      View Top 50 Players by Games Played Details</div>
+    <div class="open" id="open1">
+      <p>The chart above displays the top 50 players by games played. Hovering over a given column will display the player name and amount of games 
+        they played. Once again, it is important to note that the data used for this site is incomplete; therefor, what is seen above may not reflect 
+        actual NBA statistics with 100% accuracy.
+      </p>      
+      <button onClick="closeDesc('1')">Hide Details</button>
+    </div>
+    <div  id="chart3"></div>  
+    <div class="butt" id="butt2" onClick="openDesc('2')" title="View League Averages by Debut Year Details">
+      View League Averages by Debut Year Details</div>
+    <div class="open" id="open2">
+      <p>The chart above attempts to visualize wins contributed and points per game in a generational fashion. 
+        By grouping players by their debut year, it seemed possible to find out which debut years were the best.
+        The negative trend does not reflect the true skill level of players over time, nor does it account for new franchises 
+        that have been added over the years(opening the door for more players to debut, and possibly watering down averages).
+      </p>      
+      <button onClick="closeDesc('2')">Hide Details</button>
+    </div>
   </div>
 </body>
 <script>
