@@ -10,11 +10,23 @@ function closeNav() {
 	document.getElementById("topBar").style.display = "block";
 }
 
-window.addEventListener('online', (event) => {
-	console.log("You are now connected to the network.");
-});
+function openDesc(int) {
+	var str = "open";
+	var str2 = "butt";
+	str += int;
+	str2 += int;
+	document.getElementById(str).style.display = "block";
+	document.getElementById(str2).style.display = "none";
+}
 
-
+function closeDesc(int) {
+	var str = "open";
+	var str2 = "butt";
+	str += int;
+	str2 += int;
+	document.getElementById(str).style.display = "none";
+	document.getElementById(str2).style.display = "block";
+}
 
 window.addEventListener("load", () => {
     var x = 0;
@@ -110,7 +122,7 @@ window.addEventListener("load", () => {
 	const checkbox = document.querySelector("#dark");
     const start = document.querySelector("#start");
     if (x === 0) {
-        start.style.fontSize = "xx-large"
+        start.style.fontSize = "x-large";
     } 
 	if (sessionStorage.getItem("mode") == "dark") {
 		darkmode();
@@ -178,24 +190,8 @@ window.addEventListener("load", () => {
 					color: "gold",
 					fontColor: "white",
 					legendText: "All time heights",
-					toolTipContent: 'Height: {label} <br>Instances: {y}',
+					toolTipContent: 'height: {x} <br>Instances: {y}',
 					dataPoints: height
-				}, {
-					type: "column",
-					showInLegend: true,
-					color: "red",
-					fontColor: "white",
-					legendText: "Assist leaders(450)",
-					toolTipContent: 'Height: {label} <br>Instances: {y}',
-					dataPoints: ast_ht
-				}, {
-					type: "column",
-					showInLegend: true,
-					toolTipContent: 'Height: {x} <br>Instances: {y}',
-					color: "green",
-					fontColor: "white",
-					legendText: "Rebound Leaders(450)",
-					dataPoints: trb_ht
 				}]
 			});
         chart4.render()
@@ -238,7 +234,7 @@ window.addEventListener("load", () => {
 					color: "red",
 					fontColor: "white",
 					legendText: "Assist leaders(450)",
-					toolTipContent: 'Height: {label} <br>Instances: {y}',
+					toolTipContent: 'height: {x} <br>Instances: {y}',
 					dataPoints: ast_ht
 				}, {
 					type: "column",
@@ -332,23 +328,8 @@ window.addEventListener("load", () => {
 					showInLegend: true,
 					color: "gold",
 					legendText: "All time heights",
-					toolTipContent: 'Height: {label} <br>Instances: {y}',
+					toolTipContent: 'height: {x} <br>Instances: {y}',
 					dataPoints: height
-				}, {
-					type: "column",
-					showInLegend: true,
-					color: "red",
-					legendText: "Assist Leaders(450)",
-					toolTipContent: 'Height: {label} <br>Instances: {y}',
-					dataPoints: ast_ht
-				}, {
-					type: "column",
-					showInLegend: true,
-					toolTipContent: 'Height: {x} <br>Instances: {y}',
-					color: "green",
-					fontColor: "white",
-					legendText: "Rebound Leaders(450)",
-					dataPoints: trb_ht
 				}]
 			});
             chart4.render()
@@ -387,7 +368,7 @@ window.addEventListener("load", () => {
 					showInLegend: true,
 					color: "red",
 					legendText: "Assist Leaders(450)",
-					toolTipContent: 'Height: {label} <br>Instances: {y}',
+					toolTipContent: 'height: {x} <br>Instances: {y}',
 					dataPoints: ast_ht
 				}, {
 					type: "column",

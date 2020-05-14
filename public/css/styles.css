@@ -95,6 +95,27 @@ body {
   
   }
   
+  .open {
+    display: none;
+    background-color: yellow;
+    color: black;
+    outline: dotted;
+    outline-color: gray;
+  }
+
+  .butt {
+    height: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    background-color: yellow;
+    color: black;
+    outline: dotted;
+    outline-color: gray;
+    margin-bottom: 20px;
+  }
+
   #topBar {
     font-size: 24px;
     font-weight: bold;
@@ -117,7 +138,7 @@ body {
       display: inline-block;
       border-radius:10px;
       padding: 5px;
-      margin-bottom:25px;
+      margin-bottom: 12px; 
     }
   
     .w3-auto {
@@ -163,6 +184,7 @@ body {
       display: inline-block;
       border-radius:5px;
       padding: 5px;
+      margin-bottom: 12px; 
       
     }
   
@@ -193,7 +215,7 @@ body {
       display: inline-block;
       border-radius:10px;
       padding: 5px;
-      margin-bottom:5px;
+      margin-bottom: 12px; 
     }
   
     #span {

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>INST 462 Final Project - Height Analysis</title>
+  <title>INST 462 Project - Height Analysis</title>
   <meta name = "Luke Gibson, Tarun Malik, Joshua May" content = "Group Project for INST 462">
   <link rel = "stylesheet" href  = "css/styles.css">
   <link rel="shortcut icon" type="image/png" href="favicon.png"/>
@@ -20,25 +20,24 @@
     style="width:100%;font-size:22px">☰</a>
 
     <div class="w3-container">
-      <h3 class="w3-padding-26"><b>INST 462 Final Project</b></h3>
+      <h3 class="w3-padding-26"><b>INST 462 Project</b></h3>
     </div>
     <hr>
     <div class="w3-bar-block">
-        <a href="index.html" onclick="closeNav()" class="w3-bar-item w3-button w3-hover-white">Home</a>
-        <hr>      
-        <a href="over.html" onclick="closeNav()" class="w3-bar-item w3-button w3-hover-white">Overview</a>
-        <hr>
-        <a href="height.html" onclick="closeNav()" class="w3-bar-item w3-button w3-hover-white">Height Analysis</a>
-        <hr>
-        <a href="score.html" onclick="closeNav()" class="w3-bar-item w3-button w3-hover-white">Scoring</a>
-        <hr>
-        <a href="assist.html" onclick="closeNav()" class="w3-bar-item w3-button w3-hover-white">Assists</a>
-        <hr>
+      <a href="index.html" onclick="closeNav()" class="w3-bar-item w3-button w3-hover-white">Home</a>
+      <hr> 
+      <a href="height.html" onclick="closeNav()" class="w3-bar-item w3-button w3-hover-white">Height Analysis</a>
+      <hr>
+      <a href="score.html" onclick="closeNav()" class="w3-bar-item w3-button w3-hover-white">Scoring</a>
+      <hr>
+      <a href="assist.html" onclick="closeNav()" class="w3-bar-item w3-button w3-hover-white">Assists</a>
+      <hr>
       <p id="start">Populate Data</p>
       <div class="switch">
         <label for="dark">
           <input type="checkbox" id="dark"><span class="slide"></span>
         </label>
+      </div>
       </div>
     </div>
   </nav>
@@ -46,17 +45,46 @@
   <!-- Top menu on small screens -->
   <header class="w3-container w3-top w3-hide-large w3-xlarge w3-padding" id="topBar">
     <a href="javascript:void(0)" class="w3-button w3-margin-right" onclick="openNav()">☰</a>
-    <span><b>INST 462 Final Project</b></span>
+    <span><b>INST 462 Project</b></span>
   </header>
 
    <!-- Overlay effect when opening sidebar on small screens -->
    <div class="w3-overlay w3-hide-large" onclick="closeNav()" style="cursor:pointer" title="Close Side Menu" id="myOverlay"></div>
 
   <!--START OF PAGE CONTENT-->
-  <div class="main">  
-    <div class="full_w" id="chart4"></div>
-    <div class="full_w" id="chart5"></div>
-    <div class="full_w" id="chart6"></div>
+  <div class="main"> 
+    <div id="chart4"></div> 
+    <div class="butt" id="butt1" onClick="openDesc('1')" title="View Height Distribution Details">View Height Distribution Details</div>
+    <div class="open" id="open1">
+      <p>The chart above displays a distribution of all heights that were obtained in creating the dataset. This accounts for nearly 2500
+        players in the NBA all-time. 
+      </p>
+      
+      <h1><b>Findings</b></h1>
+      <p>The distribution of heights all-time in the NBA appears normal and mildly skewed left. This indicates what most would expect, players that make it tos 
+        the NBA tend to be taller. </p>
+      <button onClick="closeDesc('1')">Hide Details</button>
+    </div>
+    
+
+    <div id="chart5"></div>
+    <div class="butt" id="butt2" title="View Height Distribution Overview" onClick="openDesc('2')">View Height Distribution Overview</div>
+    <div class="open" id="open2">
+      <p>This chart shows the height distribution of the top 450 assist(passing the ball to a scorer), rebound(regaining possession
+        of a ball after it is shot), and wins contributed(calculation of wins a player contributed) leaders.
+      </p>
+      <h1><b>Findings</b></h1>
+      <p>Both rebounds and assists appear to have normal distributions, there is however, a noticable difference in height distribution between 
+        where they peak. Assist leaders heights peak at a height of 75 inches, while rebound leaders heights peak at 81 inches. It certainly 
+        makes sense for taller players to be rebound leaders, as they are physically closer to the rim and will often be positioned closer to 
+        the basket in order to box-out opposing players and have a better chance to gain possession of the ball. 
+      </p>
+      <p>Wins contributed is more of a toss-up in this visual. It does not appear to have a quite normal distribution, and it certainly skews
+        left. This does not entirely substantiate the claim that taller players lead to more wins, but it is a start in that direction.
+      </p>
+      <button onClick="closeDesc('2')">Hide Details</button>
+    </div>
+    <div id="chart6"></div>
 
   </div>
 </body>
