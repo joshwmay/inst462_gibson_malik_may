@@ -19,7 +19,7 @@ body {
     padding-left: 15px;
   }
   
-  #dark {
+  #dark{
     width: 0;
     height: 0;
     opacity: 0;
@@ -74,14 +74,32 @@ body {
     color: white
   }
 
-  
+  button {
+    height: 15px;
+  }
   
   ::-webkit-scrollbar {
-    width: 5px;
+    width: 0px;
   }
   
   img {
     padding-top: 10px;
+  }
+  footer a , .footer_ {
+    font-weight: bold;
+    color: white;
+    background-color: #B32136;
+    -webkit-text-stroke-color: darkblue;
+    -webkit-text-stroke-width: 1px;
+  }
+  footer{
+    font-weight: bold;
+    color: white;
+    background-color: #B32136;
+    -webkit-text-stroke-color: darkblue;
+    -webkit-text-stroke-width: 1px;
+    width: 105%;
+    height: 100px;
   }
 
   #mySidebar {

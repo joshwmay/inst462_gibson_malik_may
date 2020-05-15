@@ -185,4 +185,109 @@ app.get('/ws', (req, res) => {
         res.redirect('/error');
           })
   });
+
+
+
+
+
+  app.get('/ast_ast', (req, res) => {
+    const baseURL = 'http://localhost:' + port + '/json/ast_ast.json';
+    fetch(baseURL)
+      .then(res => res.json())
+      .then(data => { 
+        console.log(data)       
+        res.send({ data: data });
+          })
+        .catch((err) => {        
+        res.redirect('/error');
+          })
+  });app.get('/ast_pts', (req, res) => {
+    const baseURL = 'http://localhost:' + port + '/json/ast_pts.json';
+    fetch(baseURL)
+      .then(res => res.json())
+      .then(data => { 
+        console.log(data)       
+        res.send({ data: data });
+          })
+        .catch((err) => {        
+        res.redirect('/error');
+          })
+  });app.get('/ast_rbs', (req, res) => {
+    const baseURL = 'http://localhost:' + port + '/json/ast_rbs.json';
+    fetch(baseURL)
+      .then(res => res.json())
+      .then(data => { 
+        console.log(data)       
+        res.send({ data: data });
+          })
+        .catch((err) => {        
+        res.redirect('/error');
+          })
+  });app.get('/pts_ast', (req, res) => {
+    const baseURL = 'http://localhost:' + port + '/json/pts_ast.json';
+    fetch(baseURL)
+      .then(res => res.json())
+      .then(data => { 
+        console.log(data)       
+        res.send({ data: data });
+          })
+        .catch((err) => {        
+        res.redirect('/error');
+          })
+  });app.get('/pts_pts', (req, res) => {
+    const baseURL = 'http://localhost:' + port + '/json/pts_pts.json';
+    fetch(baseURL)
+      .then(res => res.json())
+      .then(data => { 
+        console.log(data)       
+        res.send({ data: data });
+          })
+        .catch((err) => {        
+        res.redirect('/error');
+          })
+  });app.get('/pts_rbs', (req, res) => {
+    const baseURL = 'http://localhost:' + port + '/json/pts_rb.json';
+    fetch(baseURL)
+      .then(res => res.json())
+      .then(data => { 
+        console.log(data)       
+        res.send({ data: data });
+          })
+        .catch((err) => {        
+        res.redirect('/error');
+          })
+  });app.get('/rbs_ast', (req, res) => {
+    const baseURL = 'http://localhost:' + port + '/json/rbs_ast.json';
+    fetch(baseURL)
+      .then(res => res.json())
+      .then(data => { 
+        console.log(data)       
+        res.send({ data: data });
+          })
+        .catch((err) => {        
+        res.redirect('/error');
+          })
+  });app.get('/rbs_pts', (req, res) => {
+    const baseURL = 'http://localhost:' + port + '/json/rbs_pts.json';
+    fetch(baseURL)
+      .then(res => res.json())
+      .then(data => { 
+        console.log(data)       
+        res.send({ data: data });
+          })
+        .catch((err) => {        
+        res.redirect('/error');
+          })
+  });app.get('/rbs_rbs', (req, res) => {
+    const baseURL = 'http://localhost:' + port + '/json/rbs_rbs.json';
+    fetch(baseURL)
+      .then(res => res.json())
+      .then(data => { 
+        console.log(data)       
+        res.send({ data: data });
+          })
+        .catch((err) => {        
+        res.redirect('/error');
+          })
+  });
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

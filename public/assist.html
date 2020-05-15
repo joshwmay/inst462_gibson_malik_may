@@ -9,7 +9,7 @@
   <link rel="shortcut icon" type="image/png" href="favicon.png"/>
   <link rel = "stylesheet" href = "https://www.w3schools.com/w3css/4/w3.css">
   <link rel = "stylesheet" href = "https://fonts.googleapis.com/css?family=Poppins">
-  <script src = "js/script.js"></script>
+  <script src = "js/as_script.js"></script>
   <script src = "https://cdnjs.cloudflare.com/ajax/libs/sigma.js/1.2.1/sigma.min.js"></script>
   <script src = "https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"></script>
 </head>
@@ -29,9 +29,7 @@
       <hr> 
       <a href="height.html" onclick="closeNav()" class="w3-bar-item w3-button w3-hover-white">Height Analysis</a>
       <hr>
-      <a href="score.html" onclick="closeNav()" class="w3-bar-item w3-button w3-hover-white">Scoring</a>
-      <hr>
-      <a href="assist.html" onclick="closeNav()" class="w3-bar-item w3-button w3-hover-white">Assists</a>
+      <a href="assist.html" onclick="closeNav()" class="w3-bar-item w3-button w3-hover-white">Scoring & Assists</a>
       <hr>
       <p id="start">Populate Data</p>
       <div class="switch">
@@ -54,7 +52,15 @@
 
   <!--START OF PAGE CONTENT-->
   <div class="main">   
-    <div class="full_w" id="chart5"></div>
+    <h1><b>Scoring and Assists:</b></h1>
+    <p>This page looks at top players based on scoring and assists. The top chart includes the top 50 players based on scoring and looks 
+      at their point scoring, rebound, and assist statistics.
+    </p>
+    <div id="chart2"></div>
+    <div class="butt" id="pts">Points ascending</div>    
+    <div class="butt" id="ast">Assists ascending</div>    
+    <div class="butt" id="rbs">Rebounds ascending</div>
+    <div id="chart5"></div>
   </div>
 </body>
 <footer>
@@ -63,7 +69,7 @@
       Luke Gibson
     </p>
     <p>
-      Joshua May
+      <a href="https://www.linkedin.com/in/joshua-may-5a213712b/" title="Click to view LinkedIn">Joshua May</a>
     </p>
     <p>
       Tarun Malik
