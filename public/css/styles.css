@@ -24,7 +24,10 @@ body {
     height: 0;
     opacity: 0;
   }
-  
+  .nest {
+    display: flex;
+    flex-direction: row;
+  }
   label {
     display: block;
     height: 15px;
@@ -72,10 +75,6 @@ body {
   body.dark-mode {
     background: #353535;
     color: white
-  }
-
-  button {
-    height: 15px;
   }
   
   ::-webkit-scrollbar {

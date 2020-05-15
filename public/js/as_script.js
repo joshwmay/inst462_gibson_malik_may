@@ -25,6 +25,8 @@ function openNav() {
       str2 += int;
       document.getElementById(str).style.display = "none";
       document.getElementById(str2).style.display = "block";
+      document.getElementById(str2).style.display = "flex";
+      document.getElementById(str2).style.justifyContent = "center";
   }
   
   window.addEventListener("load", () => {
@@ -170,9 +172,7 @@ function openNav() {
           }
         })
     });  
-    const cont1 = document.querySelector("#chart1");
     const cont2 = document.querySelector("#chart2");
-    const cont3 = document.querySelector("#chart3");
     const cont5 = document.querySelector("#chart5");
     const checkbox = document.querySelector("#dark");
     const start = document.querySelector("#start");
@@ -217,6 +217,9 @@ function openNav() {
             
             }
             start.style.color = "white";
+            butt1.style.color = "white";            
+            butt2.style.color = "white";
+            butt3.style.color = "white";
             darkmode("0");
 
         } else {
@@ -236,6 +239,9 @@ function openNav() {
             
             }
             start.style.color = "white";
+            butt1.style.color = "white";            
+            butt2.style.color = "white";
+            butt3.style.color = "white";
             darkmode("1");
 
         } else {
@@ -254,6 +260,9 @@ function openNav() {
             
             }
             start.style.color = "white";
+            butt1.style.color = "white";            
+            butt2.style.color = "white";
+            butt3.style.color = "white";
             darkmode("2");
 
         } else {

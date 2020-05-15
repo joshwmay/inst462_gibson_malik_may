@@ -26,6 +26,8 @@ function closeDesc(int) {
 	str2 += int;
 	document.getElementById(str).style.display = "none";
 	document.getElementById(str2).style.display = "block";
+	document.getElementById(str2).style.display = "flex";
+	document.getElementById(str2).style.justifyContent = "center";
 }
 
 window.addEventListener("load", () => {
