@@ -105,16 +105,16 @@ window.addEventListener("load", () => {
 	.then(res => res.data.map(c => c.x))
 	.then(x => {
 		fetch("/ht_summ")
-			.then(res => res.json())
-			.then(res => res.data.map(c => c.y))
-			.then(y => {
+	      .then(res => res.json())
+	      .then(res => res.data.map(c => c.y))
+	      .then(y => {
 				for (let i = 0; i < y.length; i += 1) {
 					ht_summ.push({
 						x: x[i],
 						y: y[i]
 					});
 				}
-			})
+			});
 	});
     const cont4 = document.querySelector("#chart4");
 	const cont5 = document.querySelector("#chart5");
@@ -138,7 +138,8 @@ window.addEventListener("load", () => {
                 start.style.fontSize = "medium";
                 start.style.justifycontent = "center";
             
-            }
+			}
+			start.style.color = "white";
 			darkmode();
 
 		} else {
@@ -177,6 +178,7 @@ window.addEventListener("load", () => {
 				axisY: {
 					labelFontColor: "white",
 					title: "Occurrences",
+					fontColor: "white",
 					gridThickness: 0,
 					tickLength: 1,
 					interval: 50,
@@ -237,21 +239,13 @@ window.addEventListener("load", () => {
 					toolTipContent: 'height: {x} <br>Instances: {y}',
 					dataPoints: ast_ht
 				}, {
-					type: "column",
+					type: "area",
 					showInLegend: true,
 					toolTipContent: 'Height: {x} <br>Instances: {y}',
 					color: "green",
 					fontColor: "white",
 					legendText: "Rebound Leaders(450)",
 					dataPoints: trb_ht
-				}, {
-					type: "column",
-					showInLegend: true,
-					toolTipContent: 'Height: {x} <br>Instances: {y}',
-					color: "yellow",
-					fontColor: "white",
-					legendText: "WS Leaders(450)",
-					dataPoints: ws_ht
 				}]
 			});
         chart5.render()
@@ -262,27 +256,22 @@ window.addEventListener("load", () => {
 				backgroundColor: null,
 				title:{
 					text: "Average Points by Height(inches)",
-					fontColor: "white"
 				},
 				axisX: {
 					title: "Average Points",
 					interval: 1,
 					minimum: 64,
 					maximum: 92,
-					labelFontColor: "white",
 				},
 				axisY: {
 					title: "Average Points",
 					interval: 5,
 					maximum: 35,
-					labelFontColor: "white",
 				},
 				data: [{
-					type: "boxAndWhisker",					
+					type: "boxAndWhisker",
 					upperBoxColor: "#68FF5A",
 					lowerBoxColor: "#6A57FF",
-					whiskerColor: "white",
-					stemColor: "white",
 					color: "black",
 					yValueFormatString: "##.,##",
 					dataPoints: ht_summ
@@ -326,7 +315,7 @@ window.addEventListener("load", () => {
 				data: [{
 					type: "column",
 					showInLegend: true,
-					color: "gold",
+					color: "#E87A33",
 					legendText: "All time heights",
 					toolTipContent: 'height: {x} <br>Instances: {y}',
 					dataPoints: height
@@ -371,21 +360,13 @@ window.addEventListener("load", () => {
 					toolTipContent: 'height: {x} <br>Instances: {y}',
 					dataPoints: ast_ht
 				}, {
-					type: "column",
+					type: "area",
 					showInLegend: true,
 					toolTipContent: 'Height: {x} <br>Instances: {y}',
 					color: "green",
 					fontColor: "white",
 					legendText: "Rebound Leaders(450)",
 					dataPoints: trb_ht
-				}, {
-					type: "column",
-					showInLegend: true,
-					toolTipContent: 'Height: {x} <br>Instances: {y}',
-					color: "yellow",
-					fontColor: "white",
-					legendText: "WS` Leaders(450)",
-					dataPoints: ws_ht
 				}]
 			});
             chart5.render()
