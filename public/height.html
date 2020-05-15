@@ -53,7 +53,11 @@
 
   <!--START OF PAGE CONTENT-->
   <div class="main"> 
-    <div id="chart4"></div> 
+    <div id="chart4">
+      <script src="ht_script.js">
+        chart4()
+      </script>
+    </div> 
     <div class="butt" id="butt1" onClick="openDesc('1')" title="View Height Distribution Details">View Height Distribution Details</div>
     <div class="open" id="open1">
       <p>The chart above displays a distribution of all heights that were obtained in creating the dataset. This accounts for nearly 2500
@@ -61,13 +65,15 @@
       </p>
       
       <h1><b>Findings</b></h1>
-      <p>The distribution of heights all-time in the NBA appears normal and mildly skewed left. This indicates what most would expect, players that make it tos 
+      <p>The distribution of heights all-time in the NBA appears normal and mildly skewed left. This indicates what most would expect, players that make it to 
         the NBA tend to be taller. </p>
       <button onClick="closeDesc('1')">Hide Details</button>
     </div>
     
 
-    <div id="chart5"></div>
+    <div id="chart5"><script>
+      console.log(chart5())
+    </script></div>
     <div class="butt" id="butt2" title="View Height Distribution Overview" onClick="openDesc('2')">View Height Distribution Overview</div>
     <div class="open" id="open2">
       <p>This chart shows the height distribution of the top 450 assist(passing the ball to a scorer), rebound(regaining possession
@@ -84,7 +90,11 @@
       </p>
       <button onClick="closeDesc('2')">Hide Details</button>
     </div>
-    <div id="chart6"></div>
+    <div id="chart6">
+      <script>
+        console.log(chart6())
+      </script>
+    </div>
     <div class='tableauPlaceholder' id='viz1589496392310' style='position: relative'><noscript><a href='#'><img alt=' ' 
       src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;He&#47;HeightofAthletesvsAveragePerformance&#47;HeightofAthletesvsAveragePerformance&#47;1_rss.png' 
       style='border: none' /></a></noscript><object class='tableauViz'  
@@ -114,8 +124,21 @@
     
   </div>
 </body>
+<footer>
+  <div class="cols">
+    <p>
+      Luke Gibson
+    </p>
+    <p>
+      Joshua May
+    </p>
+    <p>
+      Tarun Malik
+    </p>
+  </div>
+  <div class="footer_">
+    <a href="pdf/report.pdf">View final report</a>
+  </div>
+</footer>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-<script>
-  
-</script>
 </html>

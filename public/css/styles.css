@@ -31,7 +31,9 @@ body {
     width: 60px;
     position: relative;
   }
-  
+  a:hover {
+    cursor: pointer;
+  }
   span.slide {
     position: absolute;
     width: 100%;
@@ -41,6 +43,7 @@ body {
   }
   .main {
     margin-top:50px;
+    padding: 25px;
   }
   .switch{
     display: flex;
@@ -101,10 +104,23 @@ body {
 
   .w3-bar-block a{
     -webkit-text-stroke-color: darkblue;
-    -webkit-text-stroke-width: 1px;
-  
+    -webkit-text-stroke-width: 1px;  
   }
-  
+  .w3-bar-block a:hover{
+    cursor: pointer;
+  }
+
+.cols {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.footer_ {
+  display: flex;
+  justify-content: center;
+}
+
 .butt:hover {
   cursor: pointer;
 }

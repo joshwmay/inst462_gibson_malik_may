@@ -150,135 +150,184 @@ window.addEventListener("load", () => {
 
 		}
 	});
-
+	function chart4(str) {		
+		if(str === "white") {
+			var sub = "gold";
+		} else {
+			var sub = "purple";
+		}
+		var chart4 = new CanvasJS.Chart(cont4, {
+			backgroundColor: null,
+			animationEnabled: true,
+			title: {
+				text: "Player Height Distribution All-Time",
+				wrap: true,
+				horizontalAlign: "center",
+				fontColor: str,
+			},
+			toolTip: {
+				shared: true
+			},
+			legend: {
+				fontColor: str,
+			},
+			axisX: {
+				labelFontColor: "none",
+				titleFontColor: str,
+				title: "Height in Inches",
+				gridThickness: 0,
+				tickLength: 1,
+				labelAngle: -20,
+				interval: 1,
+			},
+			axisY: {
+				labelFontColor: str,
+				titleFontColor: str,
+				title: "Occurrences",
+				gridThickness: 0,
+				tickLength: 1,
+				interval: 50,
+				maximum: 300,
+				labelWrap: true,
+				labelFontColor: str
+			},
+			data: [{
+				type: "column",
+				showInLegend: true,
+				color: sub,
+				fontColor: str,
+				legendText: "All time heights",
+				toolTipContent: 'height: {x} <br>Instances: {y}',
+				dataPoints: height
+			}]
+		});
+	return chart4.render()
+	
+	}
+	function chart5(str) {	
+		if(str === "white") {
+			var sub = "gold";
+		} else {
+			var sub = "purple";
+		}	
+		var chart5 = new CanvasJS.Chart(cont5, {
+			backgroundColor: null,
+			animationEnabled: true,
+			colorSet: "greenShades",
+			title: {
+				text: "Stat Leader Height Distributions",
+				wrap: true,
+				horizontalAlign: "center",
+				fontColor: str,
+			},
+			legend: {
+				fontColor: str
+			},
+			toolTip: {
+				shared: true
+			},
+			axisX: {
+				labelFontColor: "none",
+				title: "Height in Inches",
+				titleFontColor: str,
+				gridThickness: 0,
+				tickLength: 1,
+				labelAngle: -20,
+				interval: 1,
+			},
+			axisY: {
+				labelFontColor: str,
+				title: "Occurrences",
+				titleFontColor: str,
+				gridThickness: 0,
+				tickLength: 1,
+				interval: 50,
+				maximum: 100,
+				labelWrap: true,
+				labelFontColor: str
+			},
+			data: [{
+				type: "column",
+				showInLegend: true,
+				color: "red",
+				legendText: "Assist leaders(450)",
+				toolTipContent: 'Height: {x} <br>Assist Leaders: {y}',
+				dataPoints: ast_ht
+			}, {
+				type: "column",
+				showInLegend: true,
+				toolTipContent: 'Rebound Leaders: {y}',
+				color: "green",
+				legendText: "Rebound Leaders(450)",
+				dataPoints: trb_ht
+			}, {
+				type: "area",
+				showInLegend: true,
+				toolTipContent: 'Wins Contributed Leaders: {y}',
+				color: sub,
+				legendText: "Win Contribution Leaders(450)",
+				dataPoints: ws_ht
+			}]
+		});
+	chart5.render()
+	
+	}
+	function chart6(str) {		
+		var chart6 = new CanvasJS.Chart(cont6, {
+			animationEnabled: true,
+			backgroundColor: null,
+			title:{
+				text: "Average Points by Height(inches)",
+				wrap: true,
+				horizontalAlign: "center",
+				fontColor: str,
+			},
+			legend:{
+				fontColor: str,
+			},
+			toolTip: {
+				shared: true
+			},
+			axisX: {
+				labelFontColor: str,
+				title: "Average Points",
+				titleFontColor: str,
+				interval: 1,
+				minimum: 64,
+				maximum: 92,
+			},
+			axisY: {
+				labelFontColor: str,
+				title: "Average Points",				
+				titleFontColor: str,
+				interval: 5,
+				maximum: 35,
+			},
+			data: [{
+				type: "boxAndWhisker",
+				upperBoxColor: "#68FF5A",
+				lowerBoxColor: "#6A57FF",
+				color: str,
+				yValueFormatString: "##.,##",
+				dataPoints: ht_summ
+			}]
+		});
+		return chart6.render();
+	  
+	}
 	function darkmode() {
 		document.body.classList.add("dark-mode");
 		checkbox.checked = true;
 		sessionStorage.setItem("mode", "dark");
 		if (cont4) {
-			var chart4 = new CanvasJS.Chart(cont4, {
-				backgroundColor: null,
-				animationEnabled: true,
-				colorSet: "greenShades",
-				title: {
-					text: "Player Height Distribution All-Time",
-					fontColor: "white",
-				},
-				legend: {
-					fontColor: "white"
-				},
-				axisX: {
-					labelFontColor: "none",
-					title: "Height in Inches",
-					gridThickness: 0,
-					tickLength: 1,
-					labelAngle: -20,
-					interval: 1,
-				},
-				axisY: {
-					labelFontColor: "white",
-					title: "Occurrences",
-					fontColor: "white",
-					gridThickness: 0,
-					tickLength: 1,
-					interval: 50,
-					maximum: 300,
-					labelWrap: true,
-					labelFontColor: "white"
-				},
-				data: [{
-					type: "column",
-					showInLegend: true,
-					color: "gold",
-					fontColor: "white",
-					legendText: "All time heights",
-					toolTipContent: 'height: {x} <br>Instances: {y}',
-					dataPoints: height
-				}]
-			});
-        chart4.render()
-        }
+			chart4("white");
+		}
         if (cont5) {
-			var chart5 = new CanvasJS.Chart(cont5, {
-				backgroundColor: null,
-				animationEnabled: true,
-				colorSet: "greenShades",
-				title: {
-                    text: "Stat Leader Height Distributions",
-                    wrap: true,
-                    horizontalAlign: "center",
-                    fontColor: "white",
-				},
-				legend: {
-					fontColor: "white"
-				},
-				axisX: {
-					labelFontColor: "none",
-					title: "Height in Inches",
-					gridThickness: 0,
-					tickLength: 1,
-					labelAngle: -20,
-					interval: 1,
-				},
-				axisY: {
-					labelFontColor: "white",
-					title: "Occurrences",
-					gridThickness: 0,
-					tickLength: 1,
-					interval: 50,
-					maximum: 100,
-					labelWrap: true,
-					labelFontColor: "white"
-				},
-				data: [{
-					type: "column",
-					showInLegend: true,
-					color: "red",
-					fontColor: "white",
-					legendText: "Assist leaders(450)",
-					toolTipContent: 'height: {x} <br>Instances: {y}',
-					dataPoints: ast_ht
-				}, {
-					type: "area",
-					showInLegend: true,
-					toolTipContent: 'Height: {x} <br>Instances: {y}',
-					color: "green",
-					fontColor: "white",
-					legendText: "Rebound Leaders(450)",
-					dataPoints: trb_ht
-				}]
-			});
-        chart5.render()
+			chart5("white")
 		}
 		if (cont6) {
-			var chart6 = new CanvasJS.Chart(cont6, {
-				animationEnabled: true,
-				backgroundColor: null,
-				title:{
-					text: "Average Points by Height(inches)",
-				},
-				axisX: {
-					title: "Average Points",
-					interval: 1,
-					minimum: 64,
-					maximum: 92,
-				},
-				axisY: {
-					title: "Average Points",
-					interval: 5,
-					maximum: 35,
-				},
-				data: [{
-					type: "boxAndWhisker",
-					upperBoxColor: "#68FF5A",
-					lowerBoxColor: "#6A57FF",
-					color: "black",
-					yValueFormatString: "##.,##",
-					dataPoints: ht_summ
-				}]
-			});
-			chart6.render();
-		  }
+			chart6("white")
+		}
 	}
 
 	function nodark() {
@@ -286,119 +335,13 @@ window.addEventListener("load", () => {
 		checkbox.checked = false;
 		sessionStorage.setItem("mode", "light");
 		if (cont4) {
-			var chart4 = new CanvasJS.Chart(cont4, {
-				backgroundColor: null,
-				animationEnabled: true,
-				colorSet: "greenShades",
-				title: {
-					text: "Player Height Distribution All-Time",
-				},
-				axisX: {
-					labelFontColor: "none",
-					title: "Height in Inches",
-					gridThickness: 0,
-					tickLength: 1,
-					labelAngle: -20,
-					interval: 1,
-				},
-				legend: {
-					fontColor: "black"
-				},
-				axisY: {
-					title: "Occurrences",
-					gridThickness: 0,
-					tickLength: 1,
-					interval: 50,
-					maximum: 300,
-					labelWrap: true,
-				},
-				data: [{
-					type: "column",
-					showInLegend: true,
-					color: "#E87A33",
-					legendText: "All time heights",
-					toolTipContent: 'height: {x} <br>Instances: {y}',
-					dataPoints: height
-				}]
-			});
-            chart4.render()
-        }
+			chart4("black");
+		}
 		if (cont5) {
-			var chart5 = new CanvasJS.Chart(cont5, {
-				backgroundColor: null,
-				animationEnabled: true,
-				colorSet: "greenShades",
-				title: {
-                    text: "Stat Leader Height Distributions",
-                    wrap: true,
-                    horizontalAlign: "center",
-				},
-				axisX: {
-					labelFontColor: "none",
-					title: "Height in Inches",
-					gridThickness: 0,
-					tickLength: 1,
-					labelAngle: -20,
-					interval: 1,
-				},
-				legend: {
-					fontColor: "black"
-				},
-				axisY: {
-					title: "Occurrences",
-					gridThickness: 0,
-					tickLength: 1,
-					interval: 50,
-					maximum: 100,
-					labelWrap: true,
-				},
-				data: [{
-					type: "column",
-					showInLegend: true,
-					color: "red",
-					legendText: "Assist Leaders(450)",
-					toolTipContent: 'height: {x} <br>Instances: {y}',
-					dataPoints: ast_ht
-				}, {
-					type: "area",
-					showInLegend: true,
-					toolTipContent: 'Height: {x} <br>Instances: {y}',
-					color: "green",
-					fontColor: "white",
-					legendText: "Rebound Leaders(450)",
-					dataPoints: trb_ht
-				}]
-			});
-            chart5.render()
+			chart5("black");
 		}
 		if (cont6) {
-			var chart6 = new CanvasJS.Chart(cont6, {
-				animationEnabled: true,
-				backgroundColor: null,
-				title:{
-					text: "Average Points by Height(inches)",
-				},
-				axisX: {
-					title: "Average Points",
-					interval: 1,
-					minimum: 64,
-					maximum: 92,
-				},
-				axisY: {
-					title: "Average Points",
-					interval: 5,
-					maximum: 35,
-				},
-				data: [{
-					type: "boxAndWhisker",
-					upperBoxColor: "#68FF5A",
-					lowerBoxColor: "#6A57FF",
-					color: "black",
-					yValueFormatString: "##.,##",
-					dataPoints: ht_summ
-				}]
-			});
-			chart6.render();
-		  }
+			chart6("black")
+		}
 	}
 });
