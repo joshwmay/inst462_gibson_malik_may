@@ -137,6 +137,7 @@ fetch("/ws")
   const start = document.querySelector("#start");
   if (x === 0) {
     start.style.fontSize = "x-large"
+    console.log(nodark())
   } 
   if (sessionStorage.getItem("mode") == "dark") {
     darkmode();
@@ -151,6 +152,7 @@ fetch("/ws")
                 start.innerHTML = "Darkmode";
                 start.style.fontSize = "medium";
                 start.style.justifycontent = "center";
+                start.style.color = "white";
             
             }
 			darkmode();

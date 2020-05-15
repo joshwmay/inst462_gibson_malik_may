@@ -70,6 +70,8 @@ body {
     background: #353535;
     color: white
   }
+
+  
   
   ::-webkit-scrollbar {
     width: 5px;
@@ -93,19 +95,35 @@ body {
       overflow: scroll;
   }
   
+  .main {
+    background-color: rgba(117, 86, 80, 0.247);
+  }
+
   .w3-bar-block a{
     -webkit-text-stroke-color: darkblue;
     -webkit-text-stroke-width: 1px;
   
   }
   
+.butt:hover {
+  cursor: pointer;
+}
+
+.gif-cont {
+  display: flex;
+  justify-content: center;
+
+}
+
   .open {
     display: none;
-    background-color: yellow;
+    background-color: rgb(168, 137, 0);
     color: black;
     outline: dotted;
     outline-color: gray;
   }
+
+  
 
   .butt {
     height: 5%;
@@ -113,11 +131,12 @@ body {
     display: flex;
     justify-content: center;
     justify-self: center;
-    background-color: yellow;
+    background-color: rgba(172, 170, 31, 0.137);
     color: black;
     outline: dotted;
     outline-color: gray;
     margin-bottom: 20px;
+    cursor: pointer;
   }
 
   #topBar {
@@ -175,6 +194,9 @@ body {
   @media (max-width: 480px) {
     .w3-sidebar.w3-collapse {
       display: none;
+    }
+    body {
+      width: 480px;
     }
     .content h1 {
       margin-top:20px;
