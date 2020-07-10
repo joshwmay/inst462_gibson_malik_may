@@ -562,9 +562,7 @@ window.addEventListener("load", () => {
     const butt1 = document.querySelector("#pts");
     const butt2 = document.querySelector("#rbs");
     const butt3 = document.querySelector("#ast");
-    if (x === 0) {
-        start.style.fontSize = "x-large"
-    }
+
     if (sessionStorage.getItem("mode") == "dark") {
         darkmode();
     } else {
