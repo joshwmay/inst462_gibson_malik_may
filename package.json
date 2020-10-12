@@ -1,10 +1,10 @@
 {
   "name": "sample_server",
   "version": "1.0.0",
-  "description": "NBA Player Statistical Visualizations",
+  "description": "Golf Blog",
   "repository": {
     "type": "git",
-    "url": "https://github.com/joshwmay/inst462_gibson_malik_may"
+    "url": "https://github.com/joshwmay/golf"
   },
   "main": "server.js",
   "scripts": {
