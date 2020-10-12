@@ -1,106 +1,113 @@
 <!doctype html>
-<html lang="en-US">
-
+<html lang = "en-US">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>INST 462 Project - Home</title>
-    <meta name="Luke Gibson, Tarun Malik, Joshua May" content="Group Project for INST 462">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="shortcut icon" type="image/png" href="favicon.png" />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-    <script src="js/script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>INST 462 Project - Home</title>
+  <meta name = "Luke Gibson, Tarun Malik, Joshua May" content = "Group Project for INST 462">
+  <link rel = "stylesheet" href  = "css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+  <link rel = "stylesheet" href = "https://www.w3schools.com/w3css/4/w3.css">
+  <link rel = "stylesheet" href = "https://fonts.googleapis.com/css?family=Poppins">
+  <script src = "js/script.js"></script>
+  <script src = "https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"></script>
 </head>
-
 <body>
-    <!-- Sidebar/menu -->
-    <nav class="w3-sidebar w3-collapse w3-top w3-large w3-padding" id="mySidebar"><br>
-        <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">☰</a>
+  <!-- Sidebar/menu -->
+  <nav class="w3-sidebar w3-collapse w3-top w3-large w3-padding" id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="closeNav()"
+    class="w3-button w3-hide-large w3-display-topleft"
+    style="width:100%;font-size:22px">☰</a>
 
-        <div class="w3-container">
-            <h3 class="w3-padding-26"><b>INST 462 Project</b></h3>
-        </div>
-        <hr>
-        <div class="w3-bar-block">
-            <a href="index.html" onclick="closeNav()" class="w3-bar-item w3-button w3-hover-white">Home</a>
-            <hr>
-            <a href="height.html" onclick="closeNav()" class="w3-bar-item w3-button w3-hover-white">Height Analysis</a>
-            <hr>
-            <a href="assist.html" onclick="closeNav()" class="w3-bar-item w3-button w3-hover-white">Scoring & Assists</a>
-            <hr>
-            <p id="start">Darkmode</p>
-            <div class="switch">
-                <label for="dark">
+    <div class="w3-container">
+      <h3 class="w3-padding-26"><b>INST 462 Project</b></h3>
+    </div>
+    <hr>
+    <div class="w3-bar-block">
+      <a href="index.html" onclick="closeNav()" class="w3-bar-item w3-button w3-hover-white">Home</a>
+      <hr> 
+      <a href="height.html" onclick="closeNav()" class="w3-bar-item w3-button w3-hover-white">Height Analysis</a>
+      <hr>
+      <a href="assist.html" onclick="closeNav()" class="w3-bar-item w3-button w3-hover-white">Scoring & Assists</a>
+      <hr>
+      <p id="start">Populate Data</p>
+      <div class="switch">
+        <label for="dark">
           <input type="checkbox" id="dark"><span class="slide"></span>
         </label>
-            </div>
-        </div>
-    </nav>
+      </div>
+    </div>
+  </nav>
 
-    <!-- Top menu on small screens -->
-    <header class="w3-container w3-top w3-hide-large w3-xlarge w3-padding" id="topBar">
-        <a href="javascript:void(0)" class="w3-button w3-margin-right" onclick="openNav()">☰</a>
-        <span><b>INST 462 Project</b></span>
-    </header>
+  <!-- Top menu on small screens -->
+  <header class="w3-container w3-top w3-hide-large w3-xlarge w3-padding" id="topBar">
+    <a href="javascript:void(0)" class="w3-button w3-margin-right" onclick="openNav()">☰</a>
+    <span><b>INST 462 Project</b></span>
+  </header>
 
-    <!-- Overlay effect when opening sidebar on small screens -->
-    <div class="w3-overlay w3-hide-large" onclick="closeNav()" style="cursor:pointer" title="Close Side Menu" id="myOverlay"></div>
+   <!-- Overlay effect when opening sidebar on small screens -->
+   <div class="w3-overlay w3-hide-large" onclick="closeNav()" style="cursor:pointer" title="Close Side Menu" id="myOverlay"></div>
 
-    <!--START OF PAGE CONTENT-->
-    <div class="main">
-        <div class="gif-cont">
-            <a href="gif/map.gif" title="An animated map of school locations based on year, games played, and average total rebounds"><img src="gif/map.gif" width="480" height="540"></a>
+  <!--START OF PAGE CONTENT-->
+  <div class="main">
+    <div class="gif-cont"><a href="gif/map.gif" title="An animated map of school locations based on year, games played, and average total rebounds"><img src="gif/map.gif" width="480" height="540"></a></div>
+    <div class="click_n_picks">   
+      <a href="https://public.tableau.com/views/bball_map/Dashboard1?:display_count=y&publish=yes&:origin=viz_share_link">
+        <div class="butt" title="Click to view in Tableau">
+          Click to view in Tableau
         </div>
-        <div class="click_n_picks">
-            <a href="https://public.tableau.com/views/bball_map/Dashboard1?:display_count=y&publish=yes&:origin=viz_share_link">
-                <div class="butt" title="Click to view in Tableau">
-                    Click to view in Tableau
-                </div>
-            </a>
-        </div>
-        <h1><b>Site Description:</b></h1>
-        <p>This website has been designed to look at data visualizations using NBA statistics and create a data-driven story with them. This is all en route to the completion of a final group project in a data visualization course at the University of Maryland.
-            Visualizations and analysis have been done using different tools and this website serves to present the work completed. More than anything, our group wanted to make tangible. While an application is not quite the same as Tony Stark helming
-            his operating system, a thumb is now mightier than the pen or the sword.
-        </p>
-        <p><i><b>Please be aware,</b> this site relies on a <b>'Populate Data'</b> switch that appears in the dropdown/side menu. In order to show the 
+      </a>
+      </div>
+    <h1><b>Site Description:</b></h1>
+    <p>This website has been designed to look at data visualizations using NBA statistics and create a data-driven story with them. 
+      This is all en route to the completion of a final group project in a data visualization course at the University of Maryland. 
+      Visualizations and analysis have been done using different tools and this website serves to present the work completed. More than 
+      anything, our group wanted to make tangible. While an application is not quite the same as Tony Stark helming his operating system, 
+      a thumb is now mightier than the pen or the sword.
+    </p>
+    <p><i><b>Please be aware,</b> this site relies on a <b>'Populate Data'</b> switch that appears in the dropdown/side menu. In order to show the 
       data be sure to check this switch. After clicking, the switch is used for darkmode purposes. . . You may need to click it on each page you open #CodingDeadlines 
     </i></p>
-        <h1><b>Dataset Description:</b></h1>
-        <p>The dataset used for this site can be found <a href="https://github.com/joshwmay/inst462_gibson_malik_may/blob/master/public/csv/master_clean.csv">
-      here</a>. This data was obtained from <a href="https://www.basketball-reference.com/">basketball-reference.com</a>, but is incomplete. This is because the dataset was imperfectly scraped with a focus on breadth. While certain players may be missing
-            that should appear in statistical leader categories, the numbers themselves do belong in the rows of data they appear with; and there is still a story to be told.
-        </p>
-        <h1><b>Overview</b></h1>
-        <p>Below are some general visualizations that attempt to encapsulate some general statistics. The portions of this site that contain javascript visualizations appear as seen below, with the interactive visual appearing above a collapsible description.</p>
-        <div id="chart1"></div>
-        <div class="butt" id="butt1" onClick="openDesc('1')" title="View Top 50 Players by Games Played Details">
-            View Top 50 Players by Games Played Details</div>
-        <div class="open" id="open1">
-            <p>The chart above displays the top 50 players by games played. Hovering over a given column will display the player name and amount of games they played. Once again, it is important to note that the data used for this site is incomplete; therefor,
-                what is seen above may not reflect actual NBA statistics with 100% accuracy.
-            </p>
-            <button onClick="closeDesc('1')">Hide Details</button>
-        </div>
-        <div id="chart3"></div>
-        <div class="butt" id="butt2" onClick="openDesc('2')" title="View League Averages by Debut Year Details">
-            View League Averages by Debut Year Details</div>
-        <div class="open" id="open2">
-            <p>The chart above attempts to visualize wins contributed and points per game in a generational fashion. By grouping players by their debut year, it seemed possible to find out which debut years were the best. The negative trend does not reflect
-                the true skill level of players over time, nor does it account for new franchises that have been added over the years(opening the door for more players to debut, and possibly watering down averages).
-                <br>
-                <b><i>Notably</i></b>, there is a valley at 1998. This is where an <a href="https://en.wikipedia.org/wiki/NBA_lockout">NBA lockout</a> occurred, and annotating it has proven beyond the time we have for this project, so hopefully this suffices.
-            </p>
-            <button onClick="closeDesc('2')">Hide Details</button>
-        </div>
-        <div class='tableauPlaceholder' id='viz1589496574757' style='position: relative'>
-            <noscript><a href='#'><img alt=' ' 
+    <h1><b>Dataset Description:</b></h1>
+    <p>The dataset used for this site can be found <a href="https://github.com/joshwmay/inst462_gibson_malik_may/blob/master/public/csv/master_clean.csv">
+      here</a>. This data was obtained from <a href="https://www.basketball-reference.com/">basketball-reference.com</a>, but is incomplete.
+      This is because the dataset was imperfectly scraped with a focus on breadth. While certain players may be missing that should appear in 
+      statistical leader categories, the numbers themselves do belong in the rows of data they appear with; and there is still a story to be told.
+    </p> 
+    <h1><b>Overview</b></h1>   
+    <p>Below are some general visualizations that attempt to encapsulate some general statistics. The portions of this site that contain javascript 
+      visualizations appear as seen below, with the interactive visual appearing above a collapsible description.</p>
+    <div  id="chart1"></div>
+    <div class="butt" id="butt1" onClick="openDesc('1')" title="View Top 50 Players by Games Played Details">
+      View Top 50 Players by Games Played Details</div>
+    <div class="open" id="open1">
+      <p>The chart above displays the top 50 players by games played. Hovering over a given column will display the player name and amount of games 
+        they played. Once again, it is important to note that the data used for this site is incomplete; therefor, what is seen above may not reflect 
+        actual NBA statistics with 100% accuracy.
+      </p>      
+      <button onClick="closeDesc('1')">Hide Details</button>
+    </div>
+    <div  id="chart3"></div>  
+    <div class="butt" id="butt2" onClick="openDesc('2')" title="View League Averages by Debut Year Details">
+      View League Averages by Debut Year Details</div>
+    <div class="open" id="open2">
+      <p>The chart above attempts to visualize wins contributed and points per game in a generational fashion. 
+        By grouping players by their debut year, it seemed possible to find out which debut years were the best.
+        The negative trend does not reflect the true skill level of players over time, nor does it account for new franchises 
+        that have been added over the years(opening the door for more players to debut, and possibly watering down averages).
+        <br>
+        <b><i>Notably</i></b>, there is a valley at 1998. This is where an <a href = "https://en.wikipedia.org/wiki/NBA_lockout">NBA lockout</a> occurred, and annotating it has proven 
+        beyond the time we have for this project, so hopefully this suffices. 
+      </p>      
+      <button onClick="closeDesc('2')">Hide Details</button>
+    </div>
+    <div class='tableauPlaceholder' id='viz1589496574757' 
+      style='position: relative'>
+      <noscript><a href='#'><img alt=' ' 
         src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;At&#47;AthletesDebutYearvsAveragePerformance&#47;AthletesDebutYearvsAveragePerformance&#47;1_rss.png' 
         style='border: none' /></a>
       </noscript>
-            <object class='tableauViz' style='display:none;'>
+      <object class='tableauViz'  style='display:none;'>
         <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
         <param name='embed_code_version' value='3' /> 
         <param name='site_root' value='' />
@@ -115,35 +122,34 @@
         <param name='display_count' value='yes' />
         <param name='filter' value='publish=yes' />
       </object>
-        </div>
-        <script type='text/javascript'>
-            var divElement = document.getElementById('viz1589496574757');
-            var vizElement = divElement.getElementsByTagName('object')[0];
-            vizElement.style.width = '100%';
-            vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-            var scriptElement = document.createElement('script');
-            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-            vizElement.parentNode.insertBefore(scriptElement, vizElement);
-        </script>
-    </div>
+    </div>                
+    <script type='text/javascript'>                    
+      var divElement = document.getElementById('viz1589496574757');                    
+      var vizElement = divElement.getElementsByTagName('object')[0];                    
+      vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    
+      var scriptElement = document.createElement('script');                    
+      scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
+      vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+    </script>
+  </div>
 </body>
 <footer>
-    <div class="cols">
-        <p>
-            Luke Gibson
-        </p>
-        <p>
-            <a href="https://www.linkedin.com/in/joshua-may-5a213712b/" title="Click to view LinkedIn">Joshua May</a>
-        </p>
-        <p>
-            Tarun Malik
-        </p>
-    </div>
-    <div class="footer_">
-        <a href="pdf/report.pdf">View final report</a>
-    </div>
+  <div class="cols">
+    <p>
+      Luke Gibson
+    </p>
+    <p>
+      <a href="https://www.linkedin.com/in/joshua-may-5a213712b/" title="Click to view LinkedIn">Joshua May</a>
+    </p>
+    <p>
+      Tarun Malik
+    </p>
+  </div>
+  <div class="footer_">
+    <a href="pdf/report.pdf">View final report</a>
+  </div>
 </footer>
 <script>
+  
 </script>
-
 </html>
