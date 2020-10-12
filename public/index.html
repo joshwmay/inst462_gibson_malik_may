@@ -1,372 +1,106 @@
 <!doctype html>
-<html lang = "en-US">
+<html lang="en-US">
+
 <head>
-<<<<<<< HEAD
-    <title> Golf Site </title>
-    <meta name="Joshua May" content="Golf Blog">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>INST 462 Project - Home</title>
+    <meta name="Luke Gibson, Tarun Malik, Joshua May" content="Group Project for INST 462">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
-
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <link rel="shortcut icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
     <script src="js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"></script>
 </head>
-<header>
-    <h1><a href="index.html">Home</a></h1>
-    <h1><a>|</a></h1>
-    <h1><a href="blog.html">Blog</a></h1>
-    <h1><a>|</a></h1>
-    <h1><a href="reviews.html">Reviews</a></h1>
-    <h1><a>|</a></h1>
-    <h1><a href="photos.html">Photos</a></h1>
-</header>
 
 <body>
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-collapse w3-top w3-large w3-padding" id="mySidebar"><br>
+        <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">☰</a>
 
-    <div class="intro">
-        <div class="section" id="about">
-            <p>Welcome to my golf blog! First and foremost, I am on a mission to have at least one round of golf below 90 in my lifetime, and I started this site as a way to document my 'golf journey'. My hope, is that in doing so, I will improve my game,
-                become more knowledgable on the sport, and have something to anchor my motivation with. I will detail my thoughts and approaches to the game while marking off a bucket list of courses I plan on playing in my area. <br><br> Additionally,
-                I will be documenting future golf outings, while reviewing places I've played, and products I have used. Since I am not the most experience or knowledgable, I will provide an email address for inquiring minds to ask questions and give
-                commentary.
-            </p>
+        <div class="w3-container">
+            <h3 class="w3-padding-26"><b>INST 462 Project</b></h3>
         </div>
-        <div class="section" id="about2">
-            <h2>My Golf Roots</h2>
-            <p>I have been hitting golf balls since I was about 10 years old, when my grandfather handed me a 9-iron and told me to go try and hit some balls in the field behind his home.
-                <b><i>I don't recall finding much success</i></b> until my Pop-Pop came out and gave some guidance. The first thing I remember him explaining, was to <b>keep my head down</b>
-                </b> and <b>focus on the back of the ball</b> throughout the swing. He was very patient with me, and went over <i>keeping the left arm straight</i> and <i>keeping the right elbow in</i>. After those things started coming together, he attempted
-                to teach me to let the club do the work, breathe a certain way, and let go of distractions. <br><br> I have had lessons from other instructors, but none of them have stuck with me as much as the things my grandfather taught me, and the
-                honest truth is, the things I focus on when I play are usually the things he taught me, and any improvements I've seen are merely tweaking or reinforcing what I learned 20 years ago. . . I am however, still working on getting below 100
-                consistently, but the commitment is there.
-            </p>
-        </div>
-        <div class="section">
-            <h2>How I Got Here</h2>
-            <p>My relationship with golf has been inconsistent. I enjoy playing, but have had years where I play 5 or more times, and others where I did not play at all since I started. You can see by the <a href="#mapid">map</a> the different places I've
-                played and the ones I would like to(along with links to their webpages if you're interested in booking a tee time). By far, the most enjoyable place I have gotten to play, is San Diego. The US Navy allowed me to play some unforgettable
-                places, and San Diego offered weather I long for most times I hit the cart path back home on the East Coast.<br><br>How I got here today however, has more to do with the last 6 months. During Covid quarantine, I have had more time to rekindle
-                things with the sport, and where I currently reside, I have found a great par-3 course and driving range. At some point, I decided to take my clubs down the road and see how my swing was doing. I was surprised that it felt mostly intact
-                that day, but I also just enjoyed getting outside in the sun. So I started going more often until I was finding consistency, and then I decided it was time to get out and play a round.<br><br>The first round of the summer started with
-                my brother-in-law breaking my driver by accident which had an effect on the whole day. I was not upset since I have a spare and was able to stay positive. I did not keep score, but on the 18th hole I got a birdie on a par-4. It was surprising,
-                because I had to make a downhill breaking putt from the fringe in order to get it. That moment added some fuel to my fire, and I started focusing more on what it would take to get more birdies.<br><br>The next time I went out, I parred
-                the first two holes of the course and was feeling pretty good before things went downhill quick; but I learned that day, that it's okay to be picky with golf partners, because another person in my party was purposely antagonizing me and
-                intentionally talking during my backswing. Uncle or not, that is not cool, and while I can only blame myself for poor play, I felt that it was important to make note of it to avoid inviting that sort of negativity out on the course with
-                me again(I stopped keeping score after the 4th hole out of frustration).<br><br> The next time I went out, I contacted an old friend whom I had never golfed with and hadn't seen in almost a decade. We had a lot of fun, and his style of
-                golf meshed well with me. I did not play all that well, but I kept a legitimate score for the first time in my life and came out with a 105. After that round however, I found a pullcart because I felt that avoiding cart fees was in my
-                interest, and that getting added exercise would be good for me. I went back and played the same course I scored 105 on 2 weeks later, but I walked it. As much as I loved the pullcart, and having instant access to things I needed, I got
-                a 105 again. I was proud of the score though, because by hole 10, I was feeling ready to pack it in and call it a day after all the walking I had done.<br><br><b>Getting to the point</b> of now, I realized that getting a memorable score
-                in golf would require more from me than simply improving my swing consistency; I would have to improve other things about me to improve at golf. The round I walked and got a 105, my fitbit told me I finished the day with about 24,000 steps(lots
-                of par-5's, poor play, and lack of fitness will do it). When I did make it to the 18th hole I was pretty much exhausted and the fun had evaporated for me that day, and fatigue caused me to lose focus and forget the things I had worked
-                on for the weeks leading up.<br><br>I am attempting to get better at golf through:
-                <ol>
-                    <li>Improving fitness</li>
-                    <li>Improving consistency</li>
-                    <li>Boosting confidence</li>
-                    <li>Committing to the first 3 things</li>
-                </ol>
-                At this point, it's like I'm literally trying to become the best version of myself in order to play the best golf of my life, and there is nothing but intrinsic value to it. Hopefully doing so will set an example for my kids, and they will want to be
-                better versions of themselves just because they see me doing it. Maybe they'll want to come walk the course with me at some point.
-            </p>
-        </div>
-        <div class="section" id="map">
-            <div id="mapid" style="width: 80%; height: 400px;"></div>
-        </div>
-    </div>
-    <script>
-        var mymap = L.map('mapid').setView([37.96, -95.83], 4);
-
-        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-            maxZoom: 18,
-            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-                '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-                'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-            id: 'mapbox/streets-v11',
-            tileSize: 512,
-            zoomOffset: -1
-        }).addTo(mymap);
-        var circle = L.circle([38.0205, -77.996], 11000, {
-            color: 'red',
-            fillColor: '#f03',
-            fillOpacity: 0.5,
-            radius: 2000
-        }).addTo(mymap).bindPopup("<b><a href='https://tanyardgolfcourse.com/'>The Greens at Tanyard Golf Course</a></b><br><br>This was the first course I ever played and one I miss. The first hole is a downhill par 4 that can be favorable if you don't shank the ball. The long holes here offer some interesting bends, but I can't imagine it would be much fun to walk portions of the course. I remember the putting green and driving range to be well kept and enjoyable.");
-        var circle = L.circle([38.237, -77.4796], 11000, {
-            color: 'red',
-            fillColor: '#f03',
-            fillOpacity: 0.5,
-            radius: 2000
-        }).addTo(mymap).bindPopup("<b><a href='http://www.leeshillgc.com/'>Lee's Hill Golf Club</a></b><br><p>The first course I ever walked and I chose the wrong course to start with.<br><br> Don't get me wrong, the course is pretty, and the greens are nice, but the 'Hill' in Lee's Hill should not be underestimated if you are out of shape or mediocre at best on the golf course like me and you plan on walking. <br><br>If you're riding, have fun, but be careful and follow the cart rules!</p>");
-        var circle = L.circle([32.695, -117.211], 11000, {
-            color: 'red',
-            fillColor: '#f03',
-            fillOpacity: 0.5,
-            radius: 2000
-        }).addTo(mymap).bindPopup("<b><a href='https://sandiego.navylifesw.com/programs/434d53dc-2cfd-4df4-9a2f-9610df25efef'>Sea 'N' Air Golf Course</a></b><br><br><p>If you're looking for a beautiful course and you appreciate Top Gun, this one is something special. The beachside holes have stunning views of cliffs in Point Loma, and sometimes loud ass planes interrupt the game; especially if the Blue Angels are in town.</p>");
-        var circle = L.circle([33.263, -117.3279], 11000, {
-            color: 'red',
-            fillColor: '#f03',
-            fillOpacity: 0.5,
-            radius: 2000
-        }).addTo(mymap).bindPopup("<b><a href='https://www.mccscp.com/golf/'>Marine Memorial Golf Course</a></b><br><br>\
-            This was the most challenging course I've ever set foot on. The greens were as fast as plywood, and I am certain I played one of my \
-            poorest rounds here. It was fun to walk on a course that felt fit for a skateboard on the greens, but as my Boston uncle says, \
-            'I ain't no Tigah!'<br><br>That said, I would love the opportunity to go back and play the course again; even if only to put into \
-            perspective how terrible I can be at golf");
-        var circle = L.circle([32.693, -117.1188], 11000, {
-            color: 'red',
-            fillColor: '#f03',
-            fillOpacity: 0.5,
-            radius: 2000
-        }).addTo(mymap).bindPopup("<b><a href='https://www.golflink.com/golf-courses/ca/san-diego/san-diego-naval-station-golf-course'>\
-            San Diego Naval Station Golf Course</a></b><br><br>This '9-hole' course was one of the best things to ever happen to me concerning golf. \
-            It was cheap and at the time I could go several times a week. One thing that I will say stands out in my memory, is the ominous boneyard \
-            of vehicles left on deployment outside the Pacific Beacon. That sort of thing on a golf course is humbling, and makes you appreciate that \
-            time more. I would love to go back and play this spot again.");
-        var circle = L.circle([32.7994, -117.21769], 11000, {
-            color: 'red',
-            fillColor: '#f03',
-            fillOpacity: 0.5,
-            radius: 2000
-        }).addTo(mymap).bindPopup("<b><a href='https://www.sandiego.gov/park-and-recreation/golf/mbgolf'>Mission Bay Golf Course</a></b><br><br>\
-            I remember this course to be a lot of fun. I got a cheap thrill out of reading somewhere that Tiger Woods played the course growing up. \
-            Of note for me here, was the closest to the pin I've ever shot. I was within a foot of a hole-in-one on one of the early holes. \
-            Par-3 courses are a lot of fun, and this one is special. Gahh, damn you San Diego and your delicious burritos and amazing golf settings!");
-        var circle = L.circle([30.363324, -87.285537], 11000, {
-            color: 'red',
-            fillColor: '#f03',
-            fillOpacity: 0.5,
-            radius: 11000
-        }).addTo(mymap).bindPopup("<b><a href='https://www.navymwrpensacola.com/programs/6e429faf-c74d-44dc-9690-b872b66401cc'>AC Read Golf Course\
-            </a></b><br><br>This course was a lot of fun and well kept as I recall. It's been too long for me to recall anything specific other than \
-            there being some pretty trees and 'enchanting' water");
-        var circle = L.circle([40.181696, -74.9235], 11000, {
-            color: 'red',
-            fillColor: '#f03',
-            fillOpacity: 0.5,
-            radius: 2000
-        }).addTo(mymap).bindPopup("<b><a href='https://www.middletowncc.com/'>Middletown Country Club</a></b><br><br>I played this course 5 months after \
-            Covid took over society, and it was ehhh. There is no driving range, which losers like me really feel the need for before playing.\
-            <br><br>I broke my driver on the first hole, so it was a weird day for me. It got even weirder when we met the humongous ground \
-            hornets that resided on the back 9 as of August 2020. The staff here were nice, but I doubt I'll play it again if I'm in that area.");
-        var circle = L.circle([38.345383, -77.776666], 11000, {
-            color: 'red',
-            fillColor: '#f03',
-            fillOpacity: 0.5,
-            radius: 2000
-        }).addTo(mymap).bindPopup("<b><a href='https://meadowsfarmsgolfcourse.com/'>Meadows Farms Golf Course</a></b><br><br>Meadows has a few things \
-            I really love. <blockquote><li>First, is the practice hole to begin your round(on one of the 9-holes they offer).</li> <li>Second, \
-            is how enamoring the waterfall hole is.</li><li>Third, is the variety of the course</li></blockquote><p><b>But. . .</b> last time \
-            I went, the greens were beaten into minefields for putting, and if you're traveling off 95 it's kinda far.<br><br>If you are going \
-            here off 95, I highly suggest getting a sandwich from <a href='https://www.facebook.com/thebattlefieldcountrystore/'>\
-            the Battlefield Country Store</a> on your way for a $5 sandwich to pack for your round</p>");
-        var circle = L.circle([39.044861, -76.477198], 11000, {
-            color: 'red',
-            fillColor: '#f03',
-            fillOpacity: 0.5,
-            radius: 2000,
-            overflow: scroll
-        }).addTo(mymap).bindPopup("<b><a href='https://www.bayhillsgc.com/'>Bay Hills Golf Club</a></b><br><p>I got out and played this course for the first time \
-            early on a weekday and walked it. Before setting off, I was bummed to find out that you pay the same price regardless \
-            of using a cart or not; but I did not let it bother me too much.<br><br>As I started, a light drizzle set in that \
-            tapered off before I teed off from the second tee. Despite the early rain, and rain in each of the 3 prior days, \
-            the course was not too muddy. I did happen to see a very large branch fall during the rain, so stear clear of trees \
-            if you're playing here and seeing precipitation.<br><br>The play of the course was very leisurely, in that there were \
-            not a lot of troublesome water hazards or bunkers; at least none that presented too much of a problem. With that in mind, \
-            this course is perfect if you're beginning or taking someone else out for their first time.</p><a href='photos.html#bhgc'>Photos</a>");
-        var circle = L.circle([36.922197, -76.287507], 10000, {
-            color: 'red',
-            fillColor: '#f03',
-            fillOpacity: 0.5,
-            radius: 2000,
-            overflow: scroll
-        }).addTo(mymap).bindPopup("<b><a href='https://www.navymwrnavalstationnorfolk.com/programs/cbeda35b-9dc7-4ddd-aa67-4ea2b527fc90'>\
-            Sewells Point Golf Course</a></b><br><p></p>");
-        var circle = L.circle([36.883949, -76.314794], 10000, {
-            color: 'red',
-            fillColor: '#f03',
-            fillOpacity: 0.5,
-            radius: 2000,
-            overflow: scroll
-        }).addTo(mymap).bindPopup("<b><a href=''>Lamberts Point Golf Course</a></b><br><p>\
-                I got to play this course a few times and found it to be fun and convenient. \
-                The course is composed of 9-holes that you play twice for a full 18, and \
-                those 9 holes are all beside the water, have lots of elevation changes, \
-                and experience lots of high winds. What's not to love?<br><br>One of the \
-                more fun things about this course when the wind is blowing the right way, \
-                is to go to the netted driving range. I have seldom felt more ferocious with \
-                a golf club than when I hit a ball into the wind and it carries high and to the back of the driving range.</p>");
-
-        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-            maxZoom: 18,
-            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-                '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-                'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-            id: 'mapbox/streets-v11',
-            tileSize: 512,
-            zoomOffset: -1
-        }).addTo(mymap);
-        var circle = L.circle([39.254084, -76.417076], 11000, {
-                color: 'blue',
-                fillColor: 'lightblue',
-                fillOpacity: 0.5,
-                radius: 2000,
-                overflow: scroll
-            }).addTo(mymap)
-            .bindPopup("<b><a href=''>Rocky Point Golf Course</a></b>");
-        var circle = L.circle([39.330186, -76.775286], 11000, {
-                color: 'blue',
-                fillColor: 'lightblue',
-                fillOpacity: 0.5,
-                radius: 2000,
-                overflow: scroll
-            }).addTo(mymap)
-            .bindPopup("<b><a href=''>Diamond Ridge</a></b>");
-        var circle = L.circle([39.138379, -76.494457], 11000, {
-                color: 'blue',
-                fillColor: 'lightblue',
-                fillOpacity: 0.5,
-                radius: 2000,
-                overflow: scroll
-            }).addTo(mymap)
-            .bindPopup("<b><a href=''>Compass Point</a></b>");
-        var circle = L.circle([39.127253, -76.999391], 11000, {
-                color: 'blue',
-                fillColor: 'lightblue',
-                fillOpacity: 0.5,
-                radius: 2000,
-                overflow: scroll
-            }).addTo(mymap)
-            .bindPopup("<b><a href=''>Hampshire Greens</a></b>");
-        var circle = L.circle([39.121548, -77.137214], 11000, {
-                color: 'blue',
-                fillColor: 'lightblue',
-                fillOpacity: 0.5,
-                radius: 2000,
-                overflow: scroll
-            }).addTo(mymap)
-            .bindPopup("<b><a href=''>Hampshire Greens</a></b>");
-        var circle = L.circle([38.993543, -76.459327], 11000, {
-                color: 'blue',
-                fillColor: 'lightblue',
-                fillOpacity: 0.5,
-                radius: 2000,
-                overflow: scroll
-            }).addTo(mymap)
-            .bindPopup("<b><a href=''>Naval Academy Golf Club</a></b>");
-    </script>
-</body>
-
-=======
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>INST 462 Project - Home</title>
-  <meta name = "Luke Gibson, Tarun Malik, Joshua May" content = "Group Project for INST 462">
-  <link rel = "stylesheet" href  = "css/styles.css">
-  <link rel="shortcut icon" type="image/png" href="favicon.png"/>
-  <link rel = "stylesheet" href = "https://www.w3schools.com/w3css/4/w3.css">
-  <link rel = "stylesheet" href = "https://fonts.googleapis.com/css?family=Poppins">
-  <script src = "js/script.js"></script>
-  <script src = "https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"></script>
-</head>
-<body>
-  <!-- Sidebar/menu -->
-  <nav class="w3-sidebar w3-collapse w3-top w3-large w3-padding" id="mySidebar"><br>
-    <a href="javascript:void(0)" onclick="closeNav()"
-    class="w3-button w3-hide-large w3-display-topleft"
-    style="width:100%;font-size:22px">☰</a>
-
-    <div class="w3-container">
-      <h3 class="w3-padding-26"><b>INST 462 Project</b></h3>
-    </div>
-    <hr>
-    <div class="w3-bar-block">
-      <a href="index.html" onclick="closeNav()" class="w3-bar-item w3-button w3-hover-white">Home</a>
-      <hr> 
-      <a href="height.html" onclick="closeNav()" class="w3-bar-item w3-button w3-hover-white">Height Analysis</a>
-      <hr>
-      <a href="assist.html" onclick="closeNav()" class="w3-bar-item w3-button w3-hover-white">Scoring & Assists</a>
-      <hr>
-      <p id="start">Populate Data</p>
-      <div class="switch">
-        <label for="dark">
+        <hr>
+        <div class="w3-bar-block">
+            <a href="index.html" onclick="closeNav()" class="w3-bar-item w3-button w3-hover-white">Home</a>
+            <hr>
+            <a href="height.html" onclick="closeNav()" class="w3-bar-item w3-button w3-hover-white">Height Analysis</a>
+            <hr>
+            <a href="assist.html" onclick="closeNav()" class="w3-bar-item w3-button w3-hover-white">Scoring & Assists</a>
+            <hr>
+            <p id="start">Darkmode</p>
+            <div class="switch">
+                <label for="dark">
           <input type="checkbox" id="dark"><span class="slide"></span>
         </label>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Top menu on small screens -->
-  <header class="w3-container w3-top w3-hide-large w3-xlarge w3-padding" id="topBar">
-    <a href="javascript:void(0)" class="w3-button w3-margin-right" onclick="openNav()">☰</a>
-    <span><b>INST 462 Project</b></span>
-  </header>
-
-   <!-- Overlay effect when opening sidebar on small screens -->
-   <div class="w3-overlay w3-hide-large" onclick="closeNav()" style="cursor:pointer" title="Close Side Menu" id="myOverlay"></div>
-
-  <!--START OF PAGE CONTENT-->
-  <div class="main">
-    <div class="gif-cont"><a href="gif/map.gif" title="An animated map of school locations based on year, games played, and average total rebounds"><img src="gif/map.gif" width="480" height="540"></a></div>
-    <div class="click_n_picks">   
-      <a href="https://public.tableau.com/views/bball_map/Dashboard1?:display_count=y&publish=yes&:origin=viz_share_link">
-        <div class="butt" title="Click to view in Tableau">
-          Click to view in Tableau
+            </div>
         </div>
-      </a>
-      </div>
-    <h1><b>Site Description:</b></h1>
-    <p>This website has been designed to look at data visualizations using NBA statistics and create a data-driven story with them. 
-      This is all en route to the completion of a final group project in a data visualization course at the University of Maryland. 
-      Visualizations and analysis have been done using different tools and this website serves to present the work completed. More than 
-      anything, our group wanted to make tangible. While an application is not quite the same as Tony Stark helming his operating system, 
-      a thumb is now mightier than the pen or the sword.
-    </p>
-    <p><i><b>Please be aware,</b> this site relies on a <b>'Populate Data'</b> switch that appears in the dropdown/side menu. In order to show the 
+    </nav>
+
+    <!-- Top menu on small screens -->
+    <header class="w3-container w3-top w3-hide-large w3-xlarge w3-padding" id="topBar">
+        <a href="javascript:void(0)" class="w3-button w3-margin-right" onclick="openNav()">☰</a>
+        <span><b>INST 462 Project</b></span>
+    </header>
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large" onclick="closeNav()" style="cursor:pointer" title="Close Side Menu" id="myOverlay"></div>
+
+    <!--START OF PAGE CONTENT-->
+    <div class="main">
+        <div class="gif-cont">
+            <a href="gif/map.gif" title="An animated map of school locations based on year, games played, and average total rebounds"><img src="gif/map.gif" width="480" height="540"></a>
+        </div>
+        <div class="click_n_picks">
+            <a href="https://public.tableau.com/views/bball_map/Dashboard1?:display_count=y&publish=yes&:origin=viz_share_link">
+                <div class="butt" title="Click to view in Tableau">
+                    Click to view in Tableau
+                </div>
+            </a>
+        </div>
+        <h1><b>Site Description:</b></h1>
+        <p>This website has been designed to look at data visualizations using NBA statistics and create a data-driven story with them. This is all en route to the completion of a final group project in a data visualization course at the University of Maryland.
+            Visualizations and analysis have been done using different tools and this website serves to present the work completed. More than anything, our group wanted to make tangible. While an application is not quite the same as Tony Stark helming
+            his operating system, a thumb is now mightier than the pen or the sword.
+        </p>
+        <p><i><b>Please be aware,</b> this site relies on a <b>'Populate Data'</b> switch that appears in the dropdown/side menu. In order to show the 
       data be sure to check this switch. After clicking, the switch is used for darkmode purposes. . . You may need to click it on each page you open #CodingDeadlines 
     </i></p>
-    <h1><b>Dataset Description:</b></h1>
-    <p>The dataset used for this site can be found <a href="https://github.com/joshwmay/inst462_gibson_malik_may/blob/master/public/csv/master_clean.csv">
-      here</a>. This data was obtained from <a href="https://www.basketball-reference.com/">basketball-reference.com</a>, but is incomplete.
-      This is because the dataset was imperfectly scraped with a focus on breadth. While certain players may be missing that should appear in 
-      statistical leader categories, the numbers themselves do belong in the rows of data they appear with; and there is still a story to be told.
-    </p> 
-    <h1><b>Overview</b></h1>   
-    <p>Below are some general visualizations that attempt to encapsulate some general statistics. The portions of this site that contain javascript 
-      visualizations appear as seen below, with the interactive visual appearing above a collapsible description.</p>
-    <div  id="chart1"></div>
-    <div class="butt" id="butt1" onClick="openDesc('1')" title="View Top 50 Players by Games Played Details">
-      View Top 50 Players by Games Played Details</div>
-    <div class="open" id="open1">
-      <p>The chart above displays the top 50 players by games played. Hovering over a given column will display the player name and amount of games 
-        they played. Once again, it is important to note that the data used for this site is incomplete; therefor, what is seen above may not reflect 
-        actual NBA statistics with 100% accuracy.
-      </p>      
-      <button onClick="closeDesc('1')">Hide Details</button>
-    </div>
-    <div  id="chart3"></div>  
-    <div class="butt" id="butt2" onClick="openDesc('2')" title="View League Averages by Debut Year Details">
-      View League Averages by Debut Year Details</div>
-    <div class="open" id="open2">
-      <p>The chart above attempts to visualize wins contributed and points per game in a generational fashion. 
-        By grouping players by their debut year, it seemed possible to find out which debut years were the best.
-        The negative trend does not reflect the true skill level of players over time, nor does it account for new franchises 
-        that have been added over the years(opening the door for more players to debut, and possibly watering down averages).
-        <br>
-        <b><i>Notably</i></b>, there is a valley at 1998. This is where an <a href = "https://en.wikipedia.org/wiki/NBA_lockout">NBA lockout</a> occurred, and annotating it has proven 
-        beyond the time we have for this project, so hopefully this suffices. 
-      </p>      
-      <button onClick="closeDesc('2')">Hide Details</button>
-    </div>
-    <div class='tableauPlaceholder' id='viz1589496574757' 
-      style='position: relative'>
-      <noscript><a href='#'><img alt=' ' 
+        <h1><b>Dataset Description:</b></h1>
+        <p>The dataset used for this site can be found <a href="https://github.com/joshwmay/inst462_gibson_malik_may/blob/master/public/csv/master_clean.csv">
+      here</a>. This data was obtained from <a href="https://www.basketball-reference.com/">basketball-reference.com</a>, but is incomplete. This is because the dataset was imperfectly scraped with a focus on breadth. While certain players may be missing
+            that should appear in statistical leader categories, the numbers themselves do belong in the rows of data they appear with; and there is still a story to be told.
+        </p>
+        <h1><b>Overview</b></h1>
+        <p>Below are some general visualizations that attempt to encapsulate some general statistics. The portions of this site that contain javascript visualizations appear as seen below, with the interactive visual appearing above a collapsible description.</p>
+        <div id="chart1"></div>
+        <div class="butt" id="butt1" onClick="openDesc('1')" title="View Top 50 Players by Games Played Details">
+            View Top 50 Players by Games Played Details</div>
+        <div class="open" id="open1">
+            <p>The chart above displays the top 50 players by games played. Hovering over a given column will display the player name and amount of games they played. Once again, it is important to note that the data used for this site is incomplete; therefor,
+                what is seen above may not reflect actual NBA statistics with 100% accuracy.
+            </p>
+            <button onClick="closeDesc('1')">Hide Details</button>
+        </div>
+        <div id="chart3"></div>
+        <div class="butt" id="butt2" onClick="openDesc('2')" title="View League Averages by Debut Year Details">
+            View League Averages by Debut Year Details</div>
+        <div class="open" id="open2">
+            <p>The chart above attempts to visualize wins contributed and points per game in a generational fashion. By grouping players by their debut year, it seemed possible to find out which debut years were the best. The negative trend does not reflect
+                the true skill level of players over time, nor does it account for new franchises that have been added over the years(opening the door for more players to debut, and possibly watering down averages).
+                <br>
+                <b><i>Notably</i></b>, there is a valley at 1998. This is where an <a href="https://en.wikipedia.org/wiki/NBA_lockout">NBA lockout</a> occurred, and annotating it has proven beyond the time we have for this project, so hopefully this suffices.
+            </p>
+            <button onClick="closeDesc('2')">Hide Details</button>
+        </div>
+        <div class='tableauPlaceholder' id='viz1589496574757' style='position: relative'>
+            <noscript><a href='#'><img alt=' ' 
         src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;At&#47;AthletesDebutYearvsAveragePerformance&#47;AthletesDebutYearvsAveragePerformance&#47;1_rss.png' 
         style='border: none' /></a>
       </noscript>
-      <object class='tableauViz'  style='display:none;'>
+            <object class='tableauViz' style='display:none;'>
         <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
         <param name='embed_code_version' value='3' /> 
         <param name='site_root' value='' />
@@ -381,35 +115,35 @@
         <param name='display_count' value='yes' />
         <param name='filter' value='publish=yes' />
       </object>
-    </div>                
-    <script type='text/javascript'>                    
-      var divElement = document.getElementById('viz1589496574757');                    
-      var vizElement = divElement.getElementsByTagName('object')[0];                    
-      vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    
-      var scriptElement = document.createElement('script');                    
-      scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
-      vizElement.parentNode.insertBefore(scriptElement, vizElement);                
-    </script>
-  </div>
+        </div>
+        <script type='text/javascript'>
+            var divElement = document.getElementById('viz1589496574757');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            vizElement.style.width = '100%';
+            vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+        </script>
+    </div>
 </body>
 <footer>
-  <div class="cols">
-    <p>
-      Luke Gibson
-    </p>
-    <p>
-      <a href="https://www.linkedin.com/in/joshua-may-5a213712b/" title="Click to view LinkedIn">Joshua May</a>
-    </p>
-    <p>
-      Tarun Malik
-    </p>
-  </div>
-  <div class="footer_">
-    <a href="pdf/report.pdf">View final report</a>
-  </div>
+    <div class="cols">
+        <p>
+            Luke Gibson
+        </p>
+        <p>
+            <a href="https://www.linkedin.com/in/joshua-may-5a213712b/" title="Click to view LinkedIn">Joshua May</a>
+        </p>
+        <p>
+            Tarun Malik
+        </p>
+    </div>
+    <div class="footer_">
+        <a href="pdf/report.pdf">View final report</a>
+    </div>
 </footer>
 <script>
-  
 </script>
->>>>>>> parent of 9c9f2df... Removed server elements for data population
+
 </html>
