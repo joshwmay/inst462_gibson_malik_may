@@ -382,7 +382,7 @@ window.addEventListener("load", () => {
         });
         return chart6.render();
 
-    }
+    };
 
     function darkmode() {
         document.body.classList.add("dark-mode");
@@ -394,9 +394,9 @@ window.addEventListener("load", () => {
         if (cont5) {
             chart5("white")
         }
-        if (cont6) {
-            chart6("white")
-        }
+        //if (cont6) {
+        //    chart6("white")
+        //}
     };
 
     function nodark() {
@@ -409,8 +409,8 @@ window.addEventListener("load", () => {
         if (cont5) {
             chart5("black");
         }
-        if (cont6) {
-            chart6("black")
-        }
+        //if (cont6) {
+        //    chart6("black")
+        //}
     }
 });
